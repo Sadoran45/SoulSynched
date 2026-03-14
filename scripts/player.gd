@@ -87,19 +87,19 @@ func handle_body_movement(delta: float) -> void:
 
 	move_and_slide()
 
-func activate_skill(skill_type: String) -> void:
+func activate_skill(skill_type: String, trail_direction: Vector2 = Vector2.RIGHT) -> void:
 	# Block skills during spawn protection to prevent accidental collection of the 3rd trail
 	if spawn_protection:
 		return
-		
+
 	match skill_type:
 		"double_jump":
-			velocity.y = jump_velocity
+			velocity = trail_direction * abs(jump_velocity)
 			print("Double Jump boost!")
 		"shield":
 			activate_shield(3.0)
 		"fireball":
-			shoot_fireball()
+			shoot_fireball(trail_direction)
 
 func activate_shield(duration: float) -> void:
 	has_shield = true
@@ -109,19 +109,17 @@ func activate_shield(duration: float) -> void:
 	if state == PlayerState.BODY:
 		sprite.modulate = Color(1.0, 1.0, 1.0)
 
-func shoot_fireball() -> void:
+func shoot_fireball(direction: Vector2 = Vector2.RIGHT) -> void:
 	if not projectile_scene: return
-	
+
 	var fireball = projectile_scene.instantiate()
-	var move_dir = Input.get_axis("ui_left", "ui_right")
-	var dir = move_dir if move_dir != 0 else (-1 if sprite.flip_h else 1)
-	
+
 	# Pass shooter reference to the fireball
 	fireball.shooter = self
-	
-	# Spawn far enough away to avoid collision
-	fireball.global_position = global_position + Vector2(dir * 60, 0)
-	fireball.velocity = Vector2.RIGHT * dir * fireball.speed
+
+	# Spawn far enough away to avoid collision, in the trail's aimed direction
+	fireball.global_position = global_position + direction * 60
+	fireball.velocity = direction * fireball.speed
 	get_parent().call_deferred("add_child", fireball)
 
 func take_damage(amount: int) -> void:

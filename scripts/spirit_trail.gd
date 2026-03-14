@@ -5,11 +5,38 @@ enum TrailType { DOUBLE_JUMP, SHIELD, FIREBALL }
 
 @onready var sprite: Sprite2D = $Sprite2D
 
+var is_rotating: bool = false
+var rotation_indicator: Line2D
+
 func _ready() -> void:
 	match type:
 		TrailType.DOUBLE_JUMP: sprite.modulate = Color(0.2, 1.0, 0.2)
 		TrailType.SHIELD: sprite.modulate = Color(1.0, 1.0, 0.2)
 		TrailType.FIREBALL: sprite.modulate = Color(1.0, 0.2, 0.2)
+
+func _process(_delta: float) -> void:
+	if is_rotating:
+		var mouse_pos = get_global_mouse_position()
+		var direction = mouse_pos - global_position
+		if direction.length() > 5.0:
+			rotation = direction.angle()
+
+func start_rotating() -> void:
+	is_rotating = true
+	rotation_indicator = Line2D.new()
+	rotation_indicator.points = PackedVector2Array([Vector2.ZERO, Vector2(60, 0)])
+	rotation_indicator.width = 3.0
+	match type:
+		TrailType.DOUBLE_JUMP: rotation_indicator.default_color = Color(0.2, 1.0, 0.2)
+		TrailType.SHIELD: rotation_indicator.default_color = Color(1.0, 1.0, 0.2)
+		TrailType.FIREBALL: rotation_indicator.default_color = Color(1.0, 0.2, 0.2)
+	add_child(rotation_indicator)
+
+func confirm_rotation() -> void:
+	is_rotating = false
+	if rotation_indicator:
+		rotation_indicator.queue_free()
+		rotation_indicator = null
 
 func _on_body_entered(body: Node2D) -> void:
 	# Only collect if it's the player AND they are fully in Body mode
@@ -21,6 +48,7 @@ func _on_body_entered(body: Node2D) -> void:
 					TrailType.DOUBLE_JUMP: skill_name = "double_jump"
 					TrailType.SHIELD: skill_name = "shield"
 					TrailType.FIREBALL: skill_name = "fireball"
-				
-				body.activate_skill(skill_name)
+
+				var trail_direction = Vector2.RIGHT.rotated(rotation)
+				body.activate_skill(skill_name, trail_direction)
 				queue_free()
