@@ -10,6 +10,7 @@ var trail_types_to_place = [0, 1, 2] # DOUBLE_JUMP, SHIELD, FIREBALL
 var current_trail_index = 0
 
 func _ready() -> void:
+	add_to_group("game_manager")
 	if not player_node.is_node_ready():
 		await player_node.ready
 	player_node.player_died.connect(restart_level)
@@ -58,6 +59,13 @@ func start_body_phase() -> void:
 	
 	get_tree().call_group("traps", "set_active", true)
 	get_tree().call_group("enemies", "set_active", true)
+
+func complete_level(next_level_path: String) -> void:
+	if next_level_path != "" and ResourceLoader.exists(next_level_path):
+		get_tree().change_scene_to_file(next_level_path)
+	else:
+		update_label("You Win!")
+		player_node.set_physics_process(false)
 
 func update_label(txt: String) -> void:
 	var label = get_node_or_null("../CanvasLayer/Label")
