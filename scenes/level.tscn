@@ -27,7 +27,7 @@ offset_top = 20.0
 offset_right = 300.0
 offset_bottom = 60.0
 theme_override_font_sizes/font_size = 24
-text = "Spirit Phase: Place 3 Trails (Space)"
+text = "Spirit Phase: Place Trails (1=Jump 2=Shield 3=Fire)"
 
 [node name="StartMarker" type="Marker2D" parent="." unique_id=833628017 groups=["start_marker"]]
 position = Vector2(100, 500)
@@ -64,4 +64,4 @@ rotation = 3.14159
 position = Vector2(1800, 500)
 
 [node name="Door2" parent="." unique_id=733952368 instance=ExtResource("8_packed")]
-position = Vector2(281, 478)
+position = Vector2(1280, 312)
