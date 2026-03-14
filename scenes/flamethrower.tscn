@@ -1,17 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://2234567890123"]
+[gd_scene format=3 uid="uid://0811ssiclwrq"]
 
-[ext_resource type="Script" path="res://scripts/flamethrower.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://icon.svg" id="2_texture"]
+[ext_resource type="Script" uid="uid://cmjrfy0ntsbs8" path="res://scripts/flamethrower.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="2_texture"]
 
-[node name="Flamethrower" type="StaticBody2D" groups=["traps"]]
+[node name="Flamethrower" type="StaticBody2D" unique_id=289239917 groups=["traps"]]
 script = ExtResource("1_script")
+flame_range = 300.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1982596959]
+scale = Vector2(0.264973, 0.264973)
 texture = ExtResource("2_texture")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=137843437]
 
-[node name="FireArea" type="Area2D" parent="."]
+[node name="FireArea" type="Area2D" parent="." unique_id=1650552938]
 
-[node name="FireSprite" type="Sprite2D" parent="FireArea"]
-texture = ExtResource("2_texture")
+[node name="FlameParticles" type="GPUParticles2D" parent="FireArea" unique_id=1539687040]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea" unique_id=56087646]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="FireArea" to="." method="_on_fire_area_body_entered"]
