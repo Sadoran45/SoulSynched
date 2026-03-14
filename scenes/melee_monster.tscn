@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://f123456789012"]
+
+[ext_resource type="Script" path="res://scripts/melee_monster.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://csq306j5m7v3e" path="res://icon.svg" id="2_texture"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2"]
+size = Vector2(70, 70)
+
+[node name="MeleeMonster" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.5, 0, 1)
+texture = ExtResource("2_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(32, 0)
+target_position = Vector2(0, 40)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_2")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
