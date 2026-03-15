@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dxrvk6emg1o65"]
 
+[ext_resource type="Texture2D" uid="uid://0l5ryg8gwpd7" path="res://resources/background/forest.png" id="1_b72m1"]
 [ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="2_b72m1"]
 [ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="3_5mhml"]
 [ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="4_rupth"]
@@ -40,6 +41,11 @@ tile_size = Vector2i(100, 100)
 sources/0 = SubResource("TileSetAtlasSource_5mhml")
 
 [node name="LEVEL3" type="Node2D" unique_id=1005265455]
+
+[node name="Forest" type="Sprite2D" parent="." unique_id=1477114173]
+position = Vector2(360, 271)
+scale = Vector2(0.42447913, 0.788397)
+texture = ExtResource("1_b72m1")
 
 [node name="Environment" type="Node2D" parent="." unique_id=1150921336]
 

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://btrwopjyo72sd"]
 
+[ext_resource type="Texture2D" uid="uid://0l5ryg8gwpd7" path="res://resources/background/forest.png" id="1_q6sfj"]
 [ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="2_5cjb5"]
 [ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="3_q6sfj"]
 [ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="4_0wxwt"]
@@ -45,6 +46,11 @@ tile_size = Vector2i(100, 100)
 sources/0 = SubResource("TileSetAtlasSource_0wxwt")
 
 [node name="level6" type="Node2D" unique_id=1909912502]
+
+[node name="Forest" type="Sprite2D" parent="." unique_id=435092932]
+position = Vector2(574, 211.99998)
+scale = Vector2(0.800797, 0.799537)
+texture = ExtResource("1_q6sfj")
 
 [node name="Environment" type="Node2D" parent="." unique_id=125058418]
 
