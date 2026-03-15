@@ -25,6 +25,9 @@ size = Vector2(125.70566, 156.08856)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ku1j"]
 size = Vector2(109.50436, 159.37189)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f31uk"]
+size = Vector2(129.9315, 3415.4023)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_conm7"]
 texture = ExtResource("9_conm7")
 texture_region_size = Vector2i(100, 100)
@@ -143,8 +146,12 @@ scale = Vector2(1.8394246, 0.29630616)
 position = Vector2(-0.16845703, 72.572174)
 shape = SubResource("RectangleShape2D_2ku1j")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment/Floor8" unique_id=2056880892]
+position = Vector2(-119.79956, -148.928)
+shape = SubResource("RectangleShape2D_f31uk")
+
 [node name="Player" parent="." unique_id=1251124786 instance=ExtResource("2_bbk5w")]
-position = Vector2(801, 87)
+position = Vector2(1045, 487)
 
 [node name="GameManager" type="Node" parent="." unique_id=1258673517 node_paths=PackedStringArray("player_node")]
 script = ExtResource("3_conm7")
@@ -163,7 +170,7 @@ rotation = 1.5620697
 scale = Vector2(-1.28, 1.428)
 
 [node name="StartMarker" type="Marker2D" parent="." unique_id=110835123 groups=["start_marker"]]
-position = Vector2(821, 87)
+position = Vector2(1042, 482)
 
 [node name="Door2" parent="." unique_id=278255388 instance=ExtResource("7_f31uk")]
 position = Vector2(1088, -38)

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cytrwgytemsdw"]
+
+[ext_resource type="Texture2D" uid="uid://cc2yq6yhtng3q" path="res://resources/background/creditsbackground.png" id="1_0bpdh"]
+
+[node name="Credits" type="Node2D" unique_id=287587109]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=52502721]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.59864783, 0.59864783)
+texture = ExtResource("1_0bpdh")

@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cbv5jyuhnyyc"]
+[gd_scene format=4 uid="uid://cdjubhjmj0jx8"]
 
 [ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="1_hrcei"]
 [ext_resource type="Texture2D" uid="uid://0l5ryg8gwpd7" path="res://resources/background/forest.png" id="1_xa7n4"]
@@ -225,7 +225,7 @@ fire_rate = 4.0
 
 [node name="Door" parent="." unique_id=129451375 instance=ExtResource("8_cleqw")]
 position = Vector2(1599, 294)
-next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/level3.tscn"
+next_level_path = "res://scenes/level3.tscn"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2117043727]
 scale = Vector2(0.5, 0.5)
