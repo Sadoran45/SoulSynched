@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://23kcg1prg4lc" path="res://resources/background/mainmenu.png" id="2_wu84c"]
 [ext_resource type="Texture2D" uid="uid://cwhy76lmquv50" path="res://resources/background/startbutton.png" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://bdmj4d1med64m" path="res://resources/background/creditbutton.png" id="4_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://geylj82p7gcj" path="res://resources/background/backbutton.png" id="5_8ln24"]
 
 [node name="MainMenu" type="Control" unique_id=1570779586]
 layout_mode = 3
@@ -26,30 +25,20 @@ texture = ExtResource("2_wu84c")
 custom_minimum_size = Vector2(2.48, 0)
 layout_mode = 0
 offset_left = 738.0
-offset_top = 437.0
+offset_top = 510.0
 offset_right = 1238.0
-offset_bottom = 613.0
+offset_bottom = 686.0
 scale = Vector2(0.8834504, 0.8834504)
 texture_normal = ExtResource("3_8ln24")
 
 [node name="Credits" type="TextureButton" parent="." unique_id=2085577551]
 layout_mode = 0
 offset_left = 738.0
-offset_top = 592.0
+offset_top = 727.0
 offset_right = 1248.0
-offset_bottom = 777.0
+offset_bottom = 912.0
 scale = Vector2(0.88345045, 0.88345045)
 texture_normal = ExtResource("4_rtw2f")
 
-[node name="Leave" type="TextureButton" parent="." unique_id=1704870775]
-layout_mode = 0
-offset_left = 738.0
-offset_top = 755.00006
-offset_right = 1248.0
-offset_bottom = 940.00006
-scale = Vector2(0.88345045, 0.88345045)
-texture_normal = ExtResource("5_8ln24")
-
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="Leave" to="." method="_on_leave_pressed"]

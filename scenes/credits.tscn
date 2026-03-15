@@ -7,5 +7,5 @@
 [node name="TextureRect" type="TextureRect" parent="." unique_id=52502721]
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.59864783, 0.59864783)
+scale = Vector2(0.9967256, 0.9967256)
 texture = ExtResource("1_0bpdh")
