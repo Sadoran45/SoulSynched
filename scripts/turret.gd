@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @export var projectile_scene: PackedScene
-@export var fire_rate: float = 2.0
+@export var fire_rate: float = 1.33
 @export var is_active: bool = false
 @export var max_shots: int = 3
 @export var reload_time: float = 3.0

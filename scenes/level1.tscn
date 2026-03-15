@@ -125,7 +125,7 @@ detection_radius = 600.0
 [node name="Turret" parent="Traps" unique_id=1920851378 instance=ExtResource("6_2ku1j")]
 position = Vector2(1079, 109.00001)
 rotation = 1.5620697
-scale = Vector2(-1.515, 1.9475195)
+scale = Vector2(-1.28, 1.428)
 
 [node name="StartMarker" type="Marker2D" parent="." unique_id=110835123 groups=["start_marker"]]
 position = Vector2(1094, 500)

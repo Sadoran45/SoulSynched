@@ -4,12 +4,12 @@ enum PlayerState { SPIRIT, BODY }
 
 @export var state: PlayerState = PlayerState.SPIRIT
 @export var speed: float = 300.0
-@export var jump_velocity: float = -400.0
+@export var jump_velocity: float = -600.0
 @export var spirit_speed: float = 500.0
 @export var projectile_scene: PackedScene = null
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
-var health: int = 3
+var health: int = 1
 var is_invincible: bool = false
 var has_shield: bool = false
 var can_double_jump: bool = false
@@ -50,8 +50,8 @@ func set_state(new_state: PlayerState) -> void:
 		# Important: Move to start marker occurs in GameManager BEFORE this is called
 		collision_shape.set_deferred("disabled", false)
 		sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
-		health = 3
-		start_spawn_protection(2.0)
+		health = 1
+		start_spawn_protection(0.5)
 
 func start_spawn_protection(duration: float) -> void:
 	spawn_protection = true
@@ -128,11 +128,14 @@ func handle_body_movement(delta: float) -> void:
 			can_double_jump = false
 	
 	var direction = Input.get_axis("ui_left", "ui_right")
+	var accel = speed * 10.0 # Fast acceleration
+	var friction = speed * 5.0 # Slower friction to allow momentum
+	
 	if direction:
-		velocity.x = direction * speed
+		velocity.x = move_toward(velocity.x, direction * speed, accel * delta)
 		sprite.flip_h = direction < 0
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
 
 	move_and_slide()
 
@@ -143,8 +146,10 @@ func activate_skill(skill_type: String, trail_direction: Vector2 = Vector2.RIGHT
 
 	match skill_type:
 		"double_jump":
+			# Instant boost in the trail's direction (now much stronger)
+			velocity = trail_direction.normalized() * abs(jump_velocity) * 1.5
 			can_double_jump = true
-			print("Double Jump ready!")
+			print("Double Jump boost! Velocity: ", velocity)
 		"shield":
 			activate_shield(3.0)
 		"fireball":

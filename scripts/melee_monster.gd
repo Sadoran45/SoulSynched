@@ -19,6 +19,7 @@ func _ready() -> void:
 
 func set_active(active: bool) -> void:
 	is_active = active
+	print("Monster set_active: ", active)
 	if not is_node_ready():
 		return
 	if is_active:
@@ -62,7 +63,9 @@ func _find_player() -> void:
 		player = players[0]
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
+	print("Hitbox entered by: ", body.name)
 	if is_active and not is_dying and body.is_in_group("player"):
+		print("Dealing damage to player")
 		if body.has_method("take_damage"):
 			body.take_damage(damage)
 

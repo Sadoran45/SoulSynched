@@ -2,7 +2,7 @@ extends Area2D
 
 @export var speed: float = 400.0
 @export var damage: int = 1
-@export var max_range: float = 600.0
+@export var max_range: float = 750.0
 var velocity: Vector2 = Vector2.ZERO
 var shooter: Node = null
 var distance_traveled: float = 0.0
