@@ -188,7 +188,7 @@ next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/main_menu.tsc
 
 [node name="Turret" parent="." unique_id=1658400575 instance=ExtResource("7_g1xgd")]
 position = Vector2(1070, -167)
-rotation = 3.14159
+rotation = 1.5707964
 scale = Vector2(1.265, 1.265)
 fire_rate = 3.0
 

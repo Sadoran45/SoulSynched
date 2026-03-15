@@ -218,8 +218,8 @@ flame_range = 150.0
 start_on = true
 
 [node name="Turret" parent="Traps" unique_id=1500942381 instance=ExtResource("7_ve5ok")]
-position = Vector2(1085.0001, 89)
-rotation = 3.14159
+position = Vector2(1085, 80.99999)
+rotation = 1.5620697
 scale = Vector2(0.889, 0.889)
 fire_rate = 4.0
 

@@ -135,8 +135,8 @@ player_node = NodePath("../Player")
 spirit_trail_scene = ExtResource("5_6qt4k")
 
 [node name="Turret" parent="." unique_id=776471767 instance=ExtResource("6_fh4ka")]
-position = Vector2(-80.99999, 116.999985)
-rotation = 0.023125648
+position = Vector2(7.9999847, 128)
+rotation = -1.548107
 scale = Vector2(1.34, 1.34)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=9603716]

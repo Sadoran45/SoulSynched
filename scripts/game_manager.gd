@@ -26,6 +26,10 @@ func restart_level() -> void:
 	get_tree().call_deferred("reload_current_scene")
 
 func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.keycode == KEY_R and event.pressed:
+		restart_level()
+		return
+
 	if current_phase != GamePhase.SPIRIT_PHASE:
 		return
 
@@ -54,9 +58,9 @@ func start_spirit_phase() -> void:
 
 func place_trail(trail_type: int) -> void:
 	var trail = spirit_trail_scene.instantiate()
-	trail.global_position = player_node.global_position
 	trail.type = trail_type
 	add_child(trail)
+	trail.global_position = player_node.global_position
 	trails_placed[trail_type] = true
 	rotating_trail = trail
 	trail.start_rotating()

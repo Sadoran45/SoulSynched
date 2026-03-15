@@ -51,20 +51,22 @@ func set_state(new_state: PlayerState) -> void:
 		collision_shape.set_deferred("disabled", false)
 		sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
 		health = 1
-		start_spawn_protection(0.5)
+		start_spawn_protection(0.1)
 
 func start_spawn_protection(duration: float) -> void:
 	spawn_protection = true
 	is_invincible = true
 	
+	var loops = max(1, int(duration / 0.2))
 	var tween = create_tween()
-	tween.set_loops(int(duration / 0.2))
+	tween.set_loops(loops)
 	tween.tween_property(sprite, "modulate:a", 0.3, 0.1)
 	tween.tween_property(sprite, "modulate:a", 1.0, 0.1)
 	
 	await get_tree().create_timer(duration).timeout
 	spawn_protection = false
 	is_invincible = false
+	tween.kill() # Ensure tween stops
 	sprite.modulate.a = 1.0
 
 func _is_moving() -> bool:
@@ -124,7 +126,8 @@ func handle_body_movement(delta: float) -> void:
 			velocity.y = jump_velocity
 			_coyote_timer = 0.0
 		elif can_double_jump:
-			velocity.y = jump_velocity
+			# If already moving up fast from a boost, add to it instead of capping
+			velocity.y = min(velocity.y, 0.0) + jump_velocity
 			can_double_jump = false
 	
 	var direction = Input.get_axis("ui_left", "ui_right")
@@ -146,8 +149,20 @@ func activate_skill(skill_type: String, trail_direction: Vector2 = Vector2.RIGHT
 
 	match skill_type:
 		"double_jump":
-			# Instant boost in the trail's direction
-			velocity = trail_direction.normalized() * abs(jump_velocity)
+			# Instant boost in the trail's direction - make it significantly stronger
+			# to ensure it's felt immediately and can overcome current momentum
+			var boost_velocity = trail_direction.normalized() * abs(jump_velocity) * 1.5
+			velocity = boost_velocity
+			
+			# Re-enable jumping so the user can actually use this boost effectively in air
+			can_double_jump = true
+			
+			# Reset coyote timer to prevent mixing with ground jump logic
+			_coyote_timer = 0
+			
+			# Force a small position update to ensure we leave the ground/walls if aimed away
+			global_position += trail_direction.normalized() * 2.0
+			
 			print("Double Jump boost! Velocity: ", velocity)
 		"shield":
 			activate_shield(3.0)
@@ -201,14 +216,16 @@ func take_damage(amount: int) -> void:
 
 func start_invincibility(duration: float) -> void:
 	is_invincible = true
+	var loops = max(1, int(duration / 0.2))
 	var tween = create_tween()
-	tween.set_loops(int(duration / 0.2))
+	tween.set_loops(loops)
 	tween.tween_property(sprite, "modulate:a", 0.2, 0.1)
 	tween.tween_property(sprite, "modulate:a", 1.0, 0.1)
 	
 	await get_tree().create_timer(duration).timeout
 	if not spawn_protection:
 		is_invincible = false
+		tween.kill() # Ensure tween stops
 		sprite.modulate.a = 1.0 if state == PlayerState.BODY else 0.6
 
 func die() -> void:

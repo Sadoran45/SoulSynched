@@ -17,11 +17,7 @@ func _ready() -> void:
 	set_active(is_active)
 
 func _physics_process(_delta: float) -> void:
-	if not is_active:
-		return
-	var player = get_tree().get_first_node_in_group("player")
-	if player:
-		look_at(player.global_position)
+	pass
 
 func _process(delta: float) -> void:
 	if is_reloading:
