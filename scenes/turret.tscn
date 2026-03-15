@@ -8,6 +8,7 @@
 size = Vector2(60, 84)
 
 [node name="Turret" type="StaticBody2D" unique_id=771625035 groups=["traps"]]
+scale = Vector2(1.71, 1.71)
 script = ExtResource("1_script")
 projectile_scene = ExtResource("3_packed")
 

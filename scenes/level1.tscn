@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bepjpqv64gbcv"]
+[gd_scene format=3 uid="uid://bl7e8uift5w8r"]
 
 [ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_ejswk"]
 [ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="2_bbk5w"]
@@ -51,9 +51,9 @@ texture = ExtResource("1_ejswk")
 shape = SubResource("RectangleShape2D_jm1iu")
 
 [node name="Floor5" type="StaticBody2D" parent="Environment" unique_id=2112006732]
-position = Vector2(0.99999994, 499)
+position = Vector2(0.9999999, 449.00003)
 rotation = 3.1504247
-scale = Vector2(1.8394246, 0.29630616)
+scale = Vector2(1.4787321, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor5" unique_id=1757192825]
 modulate = Color(0.2, 0.2, 0.2, 1)
@@ -97,7 +97,7 @@ texture = ExtResource("1_ejswk")
 shape = SubResource("RectangleShape2D_jm1iu")
 
 [node name="Floor8" type="StaticBody2D" parent="Environment" unique_id=937699415]
-position = Vector2(1051.9999, 95.00001)
+position = Vector2(1051.9999, 46.000008)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
 
@@ -119,17 +119,17 @@ spirit_trail_scene = ExtResource("4_d3jkd")
 [node name="Traps" type="Node2D" parent="." unique_id=734839309]
 
 [node name="MeleeMonster" parent="Traps" unique_id=608119591 instance=ExtResource("5_u3awl")]
-position = Vector2(422, 500)
+position = Vector2(422, 520)
 detection_radius = 600.0
 
 [node name="Turret" parent="Traps" unique_id=1920851378 instance=ExtResource("6_2ku1j")]
-position = Vector2(1100, 130)
-rotation = 3.14159
-scale = Vector2(1, 0.2799992)
+position = Vector2(1079, 109.00001)
+rotation = 1.5620697
+scale = Vector2(-1.515, 1.9475195)
 
 [node name="StartMarker" type="Marker2D" parent="." unique_id=110835123 groups=["start_marker"]]
 position = Vector2(1094, 500)
 
 [node name="Door2" parent="." unique_id=278255388 instance=ExtResource("7_f31uk")]
-position = Vector2(1083, 6)
+position = Vector2(1088, -38)
 next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/level2.tscn"
