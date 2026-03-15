@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bepjpqv64gbcv"]
 
-[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_3bmlt"]
-[ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="2_jm1iu"]
-[ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="3_eqxsl"]
-[ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="4_b4j7a"]
-[ext_resource type="PackedScene" uid="uid://b6n8j4ayo25bb" path="res://scenes/melee_monster.tscn" id="5_wo48x"]
-[ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="6_y0kc7"]
-[ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="7_y0kc7"]
+[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_ejswk"]
+[ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="2_bbk5w"]
+[ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="3_conm7"]
+[ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="4_d3jkd"]
+[ext_resource type="PackedScene" uid="uid://b6n8j4ayo25bb" path="res://scenes/melee_monster.tscn" id="5_u3awl"]
+[ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="6_2ku1j"]
+[ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="7_f31uk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jm1iu"]
 size = Vector2(128, 128)
@@ -21,7 +21,7 @@ scale = Vector2(10, 0.42143548)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor" unique_id=1070302222]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_3bmlt")
+texture = ExtResource("1_ejswk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor" unique_id=20757769]
 shape = SubResource("RectangleShape2D_jm1iu")
@@ -33,7 +33,7 @@ scale = Vector2(7.083946, 0.43250135)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor3" unique_id=1085576113]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_3bmlt")
+texture = ExtResource("1_ejswk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor3" unique_id=1036475081]
 shape = SubResource("RectangleShape2D_jm1iu")
@@ -45,7 +45,7 @@ scale = Vector2(1.6840323, 0.30336338)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor4" unique_id=1792534586]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_3bmlt")
+texture = ExtResource("1_ejswk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor4" unique_id=727816187]
 shape = SubResource("RectangleShape2D_jm1iu")
@@ -57,7 +57,7 @@ scale = Vector2(1.8394246, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor5" unique_id=1757192825]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_3bmlt")
+texture = ExtResource("1_ejswk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor5" unique_id=819212348]
 shape = SubResource("RectangleShape2D_jm1iu")
@@ -68,7 +68,7 @@ scale = Vector2(7.924722, 0.30579633)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor2" unique_id=1075590715]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_3bmlt")
+texture = ExtResource("1_ejswk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor2" unique_id=256689284]
 shape = SubResource("RectangleShape2D_jm1iu")
@@ -79,7 +79,7 @@ scale = Vector2(7.924722, 0.30579633)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor6" unique_id=9250715]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_3bmlt")
+texture = ExtResource("1_ejswk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor6" unique_id=285538107]
 shape = SubResource("RectangleShape2D_jm1iu")
@@ -91,7 +91,7 @@ scale = Vector2(2.6442113, 0.30336338)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor7" unique_id=1095865626]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_3bmlt")
+texture = ExtResource("1_ejswk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor7" unique_id=961580609]
 shape = SubResource("RectangleShape2D_jm1iu")
@@ -103,26 +103,26 @@ scale = Vector2(1.8394246, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor8" unique_id=1292688797]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_3bmlt")
+texture = ExtResource("1_ejswk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor8" unique_id=1152194562]
 shape = SubResource("RectangleShape2D_jm1iu")
 
-[node name="Player" parent="." unique_id=1251124786 instance=ExtResource("2_jm1iu")]
+[node name="Player" parent="." unique_id=1251124786 instance=ExtResource("2_bbk5w")]
 position = Vector2(1100, 500)
 
 [node name="GameManager" type="Node" parent="." unique_id=1258673517 node_paths=PackedStringArray("player_node")]
-script = ExtResource("3_eqxsl")
+script = ExtResource("3_conm7")
 player_node = NodePath("../Player")
-spirit_trail_scene = ExtResource("4_b4j7a")
+spirit_trail_scene = ExtResource("4_d3jkd")
 
 [node name="Traps" type="Node2D" parent="." unique_id=734839309]
 
-[node name="MeleeMonster" parent="Traps" unique_id=608119591 instance=ExtResource("5_wo48x")]
+[node name="MeleeMonster" parent="Traps" unique_id=608119591 instance=ExtResource("5_u3awl")]
 position = Vector2(422, 500)
 detection_radius = 600.0
 
-[node name="Turret" parent="Traps" unique_id=1920851378 instance=ExtResource("6_y0kc7")]
+[node name="Turret" parent="Traps" unique_id=1920851378 instance=ExtResource("6_2ku1j")]
 position = Vector2(1100, 130)
 rotation = 3.14159
 scale = Vector2(1, 0.2799992)
@@ -130,5 +130,6 @@ scale = Vector2(1, 0.2799992)
 [node name="StartMarker" type="Marker2D" parent="." unique_id=110835123 groups=["start_marker"]]
 position = Vector2(1094, 500)
 
-[node name="Door2" parent="." unique_id=278255388 instance=ExtResource("7_y0kc7")]
+[node name="Door2" parent="." unique_id=278255388 instance=ExtResource("7_f31uk")]
 position = Vector2(1083, 6)
+next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/level2.tscn"

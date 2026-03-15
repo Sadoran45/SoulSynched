@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bicesddunfvoq"]
 
-[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_wg3te"]
-[ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="2_jywgt"]
-[ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="3_ku6r7"]
-[ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="4_hi6ks"]
-[ext_resource type="PackedScene" uid="uid://b6n8j4ayo25bb" path="res://scenes/melee_monster.tscn" id="5_6x5s0"]
-[ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="6_6x5s0"]
-[ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="6_uwnnm"]
+[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_vxn4p"]
+[ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="2_5cjb5"]
+[ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="3_q6sfj"]
+[ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="4_0wxwt"]
+[ext_resource type="PackedScene" uid="uid://b6n8j4ayo25bb" path="res://scenes/melee_monster.tscn" id="5_5tkub"]
+[ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="6_jvphm"]
+[ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="7_g1xgd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jywgt"]
 size = Vector2(128, 128)
@@ -27,7 +27,7 @@ scale = Vector2(15.319999, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor" unique_id=1197480075]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor" unique_id=2010213439]
 shape = SubResource("RectangleShape2D_jywgt")
@@ -39,7 +39,7 @@ scale = Vector2(7.083946, 0.43250135)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor3" unique_id=2117121560]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor3" unique_id=677575677]
 shape = SubResource("RectangleShape2D_wg3te")
@@ -51,7 +51,7 @@ scale = Vector2(7.083946, 0.43250135)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor4" unique_id=1513722323]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor4" unique_id=2107449755]
 shape = SubResource("RectangleShape2D_wg3te")
@@ -63,7 +63,7 @@ scale = Vector2(1.8394246, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor5" unique_id=985823729]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor5" unique_id=676658182]
 shape = SubResource("RectangleShape2D_4t8k6")
@@ -74,7 +74,7 @@ scale = Vector2(12.233028, 1.8984729)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor2" unique_id=1980599499]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor2" unique_id=589245885]
 shape = SubResource("RectangleShape2D_jywgt")
@@ -86,7 +86,7 @@ scale = Vector2(1.8394246, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor6" unique_id=1347403573]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor6" unique_id=689995528]
 shape = SubResource("RectangleShape2D_4t8k6")
@@ -98,7 +98,7 @@ scale = Vector2(1.8394246, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor7" unique_id=1251263754]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor7" unique_id=1678785164]
 shape = SubResource("RectangleShape2D_4t8k6")
@@ -110,7 +110,7 @@ scale = Vector2(1.8394246, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor8" unique_id=1379693167]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor8" unique_id=703940897]
 shape = SubResource("RectangleShape2D_4t8k6")
@@ -122,7 +122,7 @@ scale = Vector2(3.7997007, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor9" unique_id=1626469194]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor9" unique_id=263878269]
 shape = SubResource("RectangleShape2D_4t8k6")
@@ -134,7 +134,7 @@ scale = Vector2(6.118551, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor10" unique_id=596721310]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor10" unique_id=1622647594]
 shape = SubResource("RectangleShape2D_4t8k6")
@@ -145,7 +145,7 @@ scale = Vector2(6.113029, 2.5784736)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor11" unique_id=2009793491]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor11" unique_id=1080570838]
 shape = SubResource("RectangleShape2D_jywgt")
@@ -156,7 +156,7 @@ scale = Vector2(-4.976721, 1.7980917)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor12" unique_id=1876812797]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor12" unique_id=751432705]
 shape = SubResource("RectangleShape2D_jywgt")
@@ -168,31 +168,31 @@ scale = Vector2(12.928177, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor13" unique_id=1376961256]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_wg3te")
+texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor13" unique_id=1444182328]
 shape = SubResource("RectangleShape2D_4t8k6")
 
-[node name="Player" parent="." unique_id=186049346 instance=ExtResource("2_jywgt")]
+[node name="Player" parent="." unique_id=186049346 instance=ExtResource("2_5cjb5")]
 position = Vector2(-544, 500)
 
 [node name="GameManager" type="Node" parent="." unique_id=782604130 node_paths=PackedStringArray("player_node")]
-script = ExtResource("3_ku6r7")
+script = ExtResource("3_q6sfj")
 player_node = NodePath("../Player")
-spirit_trail_scene = ExtResource("4_hi6ks")
+spirit_trail_scene = ExtResource("4_0wxwt")
 
 [node name="Traps" type="Node2D" parent="." unique_id=236781544]
 position = Vector2(-221, -39)
 
-[node name="MeleeMonster2" parent="Traps" unique_id=1911609280 instance=ExtResource("5_6x5s0")]
+[node name="MeleeMonster2" parent="Traps" unique_id=1911609280 instance=ExtResource("5_5tkub")]
 position = Vector2(114, 506)
 scale = Vector2(0.7841309, 0.7981632)
 detection_radius = 200.0
 
-[node name="MeleeMonster3" parent="Traps" unique_id=1626039645 instance=ExtResource("5_6x5s0")]
+[node name="MeleeMonster3" parent="Traps" unique_id=1626039645 instance=ExtResource("5_5tkub")]
 position = Vector2(562, 516)
 
-[node name="MeleeMonster4" parent="Traps" unique_id=273515926 instance=ExtResource("5_6x5s0")]
+[node name="MeleeMonster4" parent="Traps" unique_id=273515926 instance=ExtResource("5_5tkub")]
 position = Vector2(-56, 503)
 scale = Vector2(0.7841309, 0.7981632)
 detection_radius = 200.0
@@ -200,10 +200,11 @@ detection_radius = 200.0
 [node name="StartMarker" type="Marker2D" parent="." unique_id=1178234203 groups=["start_marker"]]
 position = Vector2(-549, 500)
 
-[node name="Door2" parent="." unique_id=318478667 instance=ExtResource("6_6x5s0")]
+[node name="Door2" parent="." unique_id=318478667 instance=ExtResource("6_jvphm")]
 position = Vector2(129, -141)
+next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/main_menu.tscn"
 
-[node name="Turret" parent="." unique_id=1658400575 instance=ExtResource("6_uwnnm")]
+[node name="Turret" parent="." unique_id=1658400575 instance=ExtResource("7_g1xgd")]
 position = Vector2(1070, -167)
 rotation = 3.14159
 fire_rate = 3.0
