@@ -25,7 +25,7 @@ size = Vector2(125.70566, 156.08856)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ku1j"]
 size = Vector2(109.50436, 159.37189)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3jkd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_conm7"]
 texture = ExtResource("9_conm7")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
@@ -49,7 +49,7 @@ texture_region_size = Vector2i(100, 100)
 
 [sub_resource type="TileSet" id="TileSet_u3awl"]
 tile_size = Vector2i(100, 100)
-sources/0 = SubResource("TileSetAtlasSource_d3jkd")
+sources/0 = SubResource("TileSetAtlasSource_conm7")
 
 [node name="level1" type="Node2D" unique_id=1501233525]
 

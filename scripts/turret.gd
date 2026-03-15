@@ -16,6 +16,9 @@ var reload_elapsed: float = 0.0
 func _ready() -> void:
 	set_active(is_active)
 
+func _physics_process(_delta: float) -> void:
+	pass
+
 func _process(delta: float) -> void:
 	if is_reloading:
 		reload_elapsed += delta
@@ -52,13 +55,9 @@ func _on_timer_timeout() -> void:
 
 func fire() -> void:
 	if not projectile_scene: return
-	var player = get_tree().get_first_node_in_group("player")
-	if not player: return
 	var proj = projectile_scene.instantiate()
 	proj.global_position = muzzle.global_position
-	var direction = (player.global_position - muzzle.global_position).normalized()
-	proj.velocity = direction * proj.speed
-	proj.rotation = direction.angle()
+	proj.velocity = Vector2.RIGHT.rotated(rotation) * proj.speed
 	proj.shooter = self
 	get_parent().add_child(proj)
 

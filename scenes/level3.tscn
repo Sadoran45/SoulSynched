@@ -1,11 +1,12 @@
-[gd_scene format=3 uid="uid://dxrvk6emg1o65"]
+[gd_scene format=4 uid="uid://dxrvk6emg1o65"]
 
-[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_6lxtr"]
+[ext_resource type="Texture2D" uid="uid://0l5ryg8gwpd7" path="res://resources/background/forest.png" id="1_b72m1"]
 [ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="2_b72m1"]
 [ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="3_5mhml"]
 [ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="4_rupth"]
 [ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="5_6qt4k"]
 [ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="6_fh4ka"]
+[ext_resource type="Texture2D" uid="uid://quaxn7kop25y" path="res://resources/tiles/tile.png" id="7_b72m1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhj5"]
 size = Vector2(128, 128)
@@ -13,17 +14,44 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayd5w"]
 size = Vector2(128, 128)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5mhml"]
+texture = ExtResource("7_b72m1")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rupth"]
+tile_size = Vector2i(100, 100)
+sources/0 = SubResource("TileSetAtlasSource_5mhml")
+
 [node name="LEVEL3" type="Node2D" unique_id=1005265455]
+
+[node name="Forest" type="Sprite2D" parent="." unique_id=1477114173]
+position = Vector2(360, 271)
+scale = Vector2(0.42447913, 0.788397)
+texture = ExtResource("1_b72m1")
 
 [node name="Environment" type="Node2D" parent="." unique_id=1150921336]
 
 [node name="WallRight3" type="StaticBody2D" parent="Environment" unique_id=1049836763]
 position = Vector2(1171, 274)
 scale = Vector2(0.25, 6.2090616)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/WallRight3" unique_id=490011208]
-modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WallRight3" unique_id=1451603066]
 shape = SubResource("RectangleShape2D_1fhj5")
@@ -33,10 +61,6 @@ position = Vector2(954.99994, 583)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor6" unique_id=2020240740]
-modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_6lxtr")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor6" unique_id=961708097]
 shape = SubResource("RectangleShape2D_ayd5w")
 
@@ -44,10 +68,6 @@ shape = SubResource("RectangleShape2D_ayd5w")
 position = Vector2(510, 419)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor7" unique_id=976970432]
-modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor7" unique_id=1881330474]
 shape = SubResource("RectangleShape2D_ayd5w")
@@ -57,10 +77,6 @@ position = Vector2(369, 652)
 rotation = 3.1504247
 scale = Vector2(13.239332, 0.23920703)
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor8" unique_id=1620380897]
-modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_6lxtr")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor8" unique_id=2083256348]
 shape = SubResource("RectangleShape2D_ayd5w")
 
@@ -68,10 +84,6 @@ shape = SubResource("RectangleShape2D_ayd5w")
 position = Vector2(209, 309)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor9" unique_id=1152046932]
-modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor9" unique_id=1538477389]
 shape = SubResource("RectangleShape2D_ayd5w")
@@ -81,20 +93,12 @@ position = Vector2(-90, 206.00003)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor10" unique_id=256829476]
-modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_6lxtr")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor10" unique_id=369017090]
 shape = SubResource("RectangleShape2D_ayd5w")
 
 [node name="WallRight4" type="StaticBody2D" parent="Environment" unique_id=1962314115]
 position = Vector2(-467, 219.99998)
 scale = Vector2(0.25, 6.9690614)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/WallRight4" unique_id=221878215]
-modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WallRight4" unique_id=484523740]
 shape = SubResource("RectangleShape2D_1fhj5")
@@ -104,10 +108,6 @@ position = Vector2(-371.00003, 103)
 rotation = 3.1504247
 scale = Vector2(1.7584323, -0.34557757)
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor11" unique_id=243034503]
-modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_6lxtr")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor11" unique_id=833087213]
 shape = SubResource("RectangleShape2D_ayd5w")
 
@@ -115,10 +115,6 @@ shape = SubResource("RectangleShape2D_ayd5w")
 position = Vector2(369.99997, -145)
 rotation = 3.1504247
 scale = Vector2(13.239332, 0.23920703)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor12" unique_id=5344914]
-modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor12" unique_id=1418975259]
 shape = SubResource("RectangleShape2D_ayd5w")
@@ -139,6 +135,21 @@ player_node = NodePath("../Player")
 spirit_trail_scene = ExtResource("5_6qt4k")
 
 [node name="Turret" parent="." unique_id=776471767 instance=ExtResource("6_fh4ka")]
-position = Vector2(-80.99999, 116.999985)
-rotation = 0.023125648
+position = Vector2(7.9999847, 128)
+rotation = -1.548107
 scale = Vector2(1.34, 1.34)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=9603716]
+position = Vector2(-286, 187)
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAD8//r/AAACAAEAAAD8//v/AAACAAEAAAD8//z/AAACAAEAAAD8//3/AAACAAEAAAD8//7/AAACAAEAAAD8////AAACAAEAAAD8/wAAAAACAAEAAAD8/wEAAAACAAEAAAD8/wIAAAACAAEAAAD8/wMAAAACAAEAAAD8/wQAAAACAAEAAAD8/wUAAAACAAEAAAD8/wYAAAACAAEAAAD8/wcAAAACAAEAAAD8/wgAAAACAAEAAAD8/wkAAAABAAEAAAD9/wkAAAABAAAAAAD+/wkAAAABAAAAAAD//wkAAAABAAAAAAAAAAkAAAABAAAAAAABAAkAAAABAAAAAAACAAkAAAABAAAAAAADAAkAAAABAAAAAAAEAAkAAAABAAAAAAAFAAkAAAABAAAAAAAGAAkAAAABAAAAAAAHAAkAAAABAAAAAAAIAAkAAAABAAAAAAAJAAkAAAABAAAAAAAKAAkAAAABAAAAAAALAAkAAAABAAAAAAAMAAkAAAABAAAAAAANAAkAAAABAAAAAAAOAAkAAAABAAAAAAAPAAkAAAABAAAAAAAQAAkAAAABAAAAAAARAAkAAAABAAAAAAASAAkAAAABAAAAAAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAZAAkAAAABAAAAAAAaAAkAAAABAAAAAAAbAAkAAAABAAAAAAAcAAkAAAABAAAAAAAdAAkAAAABAAAAAAAdAPr/AAAAAAEAAAAdAPv/AAAAAAEAAAAdAPz/AAAAAAEAAAAdAP3/AAAAAAEAAAAdAP7/AAAAAAEAAAAdAP//AAAAAAEAAAAdAAAAAAAAAAEAAAAdAAEAAAAAAAEAAAAdAAIAAAAAAAEAAAAdAAMAAAAAAAEAAAAdAAQAAAAAAAEAAAAdAAUAAAAAAAEAAAAdAAYAAAAAAAEAAAAdAAcAAAAAAAEAAAAdAAgAAAAAAAEAAAAdAPn/AAABAAEAAAAcAPn/AAABAAIAAAAbAPn/AAABAAIAAAAaAPn/AAABAAIAAAAZAPn/AAABAAIAAAAYAPn/AAABAAIAAAAXAPn/AAABAAIAAAAWAPn/AAABAAIAAAAVAPn/AAABAAIAAAAUAPn/AAABAAIAAAATAPn/AAABAAIAAAASAPn/AAABAAIAAAARAPn/AAABAAIAAAAQAPn/AAABAAIAAAAPAPn/AAABAAIAAAAOAPn/AAABAAIAAAANAPn/AAABAAIAAAAMAPn/AAABAAIAAAALAPn/AAABAAIAAAAKAPn/AAABAAIAAAAJAPn/AAABAAIAAAAIAPn/AAABAAIAAAAHAPn/AAABAAIAAAAGAPn/AAABAAIAAAAFAPn/AAABAAIAAAAEAPn/AAABAAIAAAADAPn/AAABAAIAAAACAPn/AAABAAIAAAABAPn/AAABAAIAAAAAAPn/AAABAAIAAAD///n/AAABAAIAAAD+//n/AAABAAIAAAD9//n/AAABAAIAAAD8//n/AAABAAIAAAAHAAIAAAABAAAAAAAIAAIAAAABAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAALAAIAAAABAAAAAAAOAAQAAAABAAAAAAAPAAQAAAABAAAAAAAQAAQAAAABAAAAAAARAAQAAAABAAAAAAAXAAcAAAABAAAAAAAYAAcAAAABAAAAAAAZAAcAAAABAAAAAAAaAAcAAAABAAAAAAAWAAcAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAAAP7/AAABAAAAAAD///7/AAABAAAAAAD+//7/AAABAAAAAAD9//7/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_rupth")
+
+[node name="camera_limits" type="Node2D" parent="." unique_id=1854750565]
+scale = Vector2(0.5, 0.5)
+
+[node name="Marker2D" type="Marker2D" parent="camera_limits" unique_id=219532386]
+position = Vector2(-958, 1360)
+
+[node name="Marker2D2" type="Marker2D" parent="camera_limits" unique_id=1716704630]
+position = Vector2(2420, -318)
