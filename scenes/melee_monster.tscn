@@ -1,31 +1,104 @@
-[gd_scene load_steps=5 format=3 uid="uid://f123456789012"]
+[gd_scene format=3 uid="uid://b6n8j4ayo25bb"]
 
-[ext_resource type="Script" path="res://scripts/melee_monster.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://csq306j5m7v3e" path="res://icon.svg" id="2_texture"]
+[ext_resource type="Script" uid="uid://bau6ssojlrk0c" path="res://scripts/melee_monster.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://qs8eveebujgn" path="res://resources/enemy/walk_slime.png" id="2_walk"]
+[ext_resource type="Texture2D" uid="uid://6l787pjp5ynu" path="res://resources/enemy/dead_slime.png" id="3_dead"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0"]
+atlas = ExtResource("3_dead")
+region = Rect2(0, 0, 374, 383)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1"]
+atlas = ExtResource("3_dead")
+region = Rect2(374, 0, 374, 383)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2"]
+atlas = ExtResource("3_dead")
+region = Rect2(748, 0, 374, 383)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3"]
+atlas = ExtResource("3_dead")
+region = Rect2(1122, 0, 374, 383)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4"]
+atlas = ExtResource("3_dead")
+region = Rect2(1496, 0, 375, 383)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0"]
+atlas = ExtResource("2_walk")
+region = Rect2(0, 0, 422, 325)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1"]
+atlas = ExtResource("2_walk")
+region = Rect2(422, 0, 422, 325)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2"]
+atlas = ExtResource("2_walk")
+region = Rect2(844, 0, 423, 325)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(64, 64)
+size = Vector2(67, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2"]
-size = Vector2(70, 70)
+size = Vector2(67, 53)
 
-[node name="MeleeMonster" type="CharacterBody2D" groups=["enemies"]]
+[node name="MeleeMonster" type="CharacterBody2D" unique_id=929339401 groups=["enemies"]]
 script = ExtResource("1_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.5, 0, 1)
-texture = ExtResource("2_texture")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2100118375]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_1")
+animation = &"walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=246895783]
+position = Vector2(8.5, -3)
 shape = SubResource("RectangleShape2D_1")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=329607764]
 position = Vector2(32, 0)
 target_position = Vector2(0, 40)
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." unique_id=992539306]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=327205794]
+position = Vector2(8.5, -2.5)
 shape = SubResource("RectangleShape2D_2")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
