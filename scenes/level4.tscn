@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://bicesddunfvoq"]
+[gd_scene format=3 uid="uid://btrwopjyo72sd"]
 
 [ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_vxn4p"]
 [ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="2_5cjb5"]
 [ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="3_q6sfj"]
 [ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="4_0wxwt"]
 [ext_resource type="PackedScene" uid="uid://b6n8j4ayo25bb" path="res://scenes/melee_monster.tscn" id="5_5tkub"]
+[ext_resource type="PackedScene" uid="uid://6n8j4ayo25bb" path="res://scenes/spikes.tscn" id="6_5cjb5"]
 [ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="6_jvphm"]
 [ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="7_g1xgd"]
 
@@ -59,7 +60,7 @@ shape = SubResource("RectangleShape2D_wg3te")
 [node name="Floor5" type="StaticBody2D" parent="Environment" unique_id=36612659]
 position = Vector2(1098, 317.00003)
 rotation = 3.1504247
-scale = Vector2(1.8394246, 0.29630616)
+scale = Vector2(1.2787361, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor5" unique_id=985823729]
 modulate = Color(0.2, 0.2, 0.2, 1)
@@ -82,7 +83,7 @@ shape = SubResource("RectangleShape2D_jywgt")
 [node name="Floor6" type="StaticBody2D" parent="Environment" unique_id=920064609]
 position = Vector2(789.99994, 243)
 rotation = 3.1504247
-scale = Vector2(1.8394246, 0.29630616)
+scale = Vector2(1.7562484, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor6" unique_id=1347403573]
 modulate = Color(0.2, 0.2, 0.2, 1)
@@ -92,27 +93,15 @@ texture = ExtResource("1_vxn4p")
 shape = SubResource("RectangleShape2D_4t8k6")
 
 [node name="Floor7" type="StaticBody2D" parent="Environment" unique_id=1348426277]
-position = Vector2(1077, 166)
+position = Vector2(1103.9999, 100.00001)
 rotation = 3.1504247
-scale = Vector2(1.8394246, 0.29630616)
+scale = Vector2(1.4794393, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor7" unique_id=1251263754]
 modulate = Color(0.2, 0.2, 0.2, 1)
 texture = ExtResource("1_vxn4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor7" unique_id=1678785164]
-shape = SubResource("RectangleShape2D_4t8k6")
-
-[node name="Floor8" type="StaticBody2D" parent="Environment" unique_id=853253974]
-position = Vector2(789, 86.00001)
-rotation = 3.1504247
-scale = Vector2(1.8394246, 0.29630616)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor8" unique_id=1379693167]
-modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_vxn4p")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor8" unique_id=703940897]
 shape = SubResource("RectangleShape2D_4t8k6")
 
 [node name="Floor9" type="StaticBody2D" parent="Environment" unique_id=742908418]
@@ -184,18 +173,20 @@ spirit_trail_scene = ExtResource("4_0wxwt")
 [node name="Traps" type="Node2D" parent="." unique_id=236781544]
 position = Vector2(-221, -39)
 
-[node name="MeleeMonster2" parent="Traps" unique_id=1911609280 instance=ExtResource("5_5tkub")]
-position = Vector2(114, 506)
-scale = Vector2(0.7841309, 0.7981632)
-detection_radius = 200.0
-
 [node name="MeleeMonster3" parent="Traps" unique_id=1626039645 instance=ExtResource("5_5tkub")]
-position = Vector2(562, 516)
+position = Vector2(427, 538)
 
-[node name="MeleeMonster4" parent="Traps" unique_id=273515926 instance=ExtResource("5_5tkub")]
-position = Vector2(-56, 503)
-scale = Vector2(0.7841309, 0.7981632)
-detection_radius = 200.0
+[node name="Spikes" parent="Traps" unique_id=1283248642 instance=ExtResource("6_5cjb5")]
+position = Vector2(-110, 544)
+scale = Vector2(0.68, 0.68)
+
+[node name="Spikes2" parent="Traps" unique_id=1958494302 instance=ExtResource("6_5cjb5")]
+position = Vector2(19.000004, 545)
+scale = Vector2(0.68, 0.68)
+
+[node name="Spikes3" parent="Traps" unique_id=368592200 instance=ExtResource("6_5cjb5")]
+position = Vector2(143, 544)
+scale = Vector2(0.68, 0.68)
 
 [node name="StartMarker" type="Marker2D" parent="." unique_id=1178234203 groups=["start_marker"]]
 position = Vector2(-549, 500)

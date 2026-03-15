@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dmivcu63lh4t2"]
+[gd_scene format=3 uid="uid://dxrvk6emg1o65"]
 
 [ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_6lxtr"]
 [ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="2_b72m1"]
@@ -18,8 +18,8 @@ size = Vector2(128, 128)
 [node name="Environment" type="Node2D" parent="." unique_id=1150921336]
 
 [node name="WallRight3" type="StaticBody2D" parent="Environment" unique_id=1049836763]
-position = Vector2(1076, 326)
-scale = Vector2(0.25, 5.1290617)
+position = Vector2(1171, 274)
+scale = Vector2(0.25, 6.2090616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/WallRight3" unique_id=490011208]
 modulate = Color(0.2, 0.2, 0.2, 1)
@@ -41,7 +41,7 @@ texture = ExtResource("1_6lxtr")
 shape = SubResource("RectangleShape2D_ayd5w")
 
 [node name="Floor7" type="StaticBody2D" parent="Environment" unique_id=1943484979]
-position = Vector2(509.00006, 496)
+position = Vector2(510, 419)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
 
@@ -65,7 +65,7 @@ texture = ExtResource("1_6lxtr")
 shape = SubResource("RectangleShape2D_ayd5w")
 
 [node name="Floor9" type="StaticBody2D" parent="Environment" unique_id=532869993]
-position = Vector2(209, 419)
+position = Vector2(209, 309)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
 
@@ -77,7 +77,7 @@ texture = ExtResource("1_6lxtr")
 shape = SubResource("RectangleShape2D_ayd5w")
 
 [node name="Floor10" type="StaticBody2D" parent="Environment" unique_id=1592775272]
-position = Vector2(-91, 337)
+position = Vector2(-90, 206.00003)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
 
@@ -100,7 +100,7 @@ texture = ExtResource("1_6lxtr")
 shape = SubResource("RectangleShape2D_1fhj5")
 
 [node name="Floor11" type="StaticBody2D" parent="Environment" unique_id=408283263]
-position = Vector2(-372, 257)
+position = Vector2(-371.00003, 103)
 rotation = 3.1504247
 scale = Vector2(1.7584323, -0.34557757)
 
@@ -112,7 +112,7 @@ texture = ExtResource("1_6lxtr")
 shape = SubResource("RectangleShape2D_ayd5w")
 
 [node name="Floor12" type="StaticBody2D" parent="Environment" unique_id=909216637]
-position = Vector2(369, -13.000061)
+position = Vector2(369.99997, -145)
 rotation = 3.1504247
 scale = Vector2(13.239332, 0.23920703)
 
@@ -124,7 +124,7 @@ texture = ExtResource("1_6lxtr")
 shape = SubResource("RectangleShape2D_ayd5w")
 
 [node name="Door2" parent="." unique_id=757050443 instance=ExtResource("2_b72m1")]
-position = Vector2(-359, 161)
+position = Vector2(-359, 12)
 next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/level4.tscn"
 
 [node name="Player" parent="." unique_id=186049346 instance=ExtResource("3_5mhml")]
@@ -139,5 +139,6 @@ player_node = NodePath("../Player")
 spirit_trail_scene = ExtResource("5_6qt4k")
 
 [node name="Turret" parent="." unique_id=776471767 instance=ExtResource("6_fh4ka")]
-position = Vector2(-84, 254)
+position = Vector2(-80.99999, 116.999985)
 rotation = 0.023125648
+scale = Vector2(1.34, 1.34)

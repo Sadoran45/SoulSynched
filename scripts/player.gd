@@ -146,9 +146,8 @@ func activate_skill(skill_type: String, trail_direction: Vector2 = Vector2.RIGHT
 
 	match skill_type:
 		"double_jump":
-			# Instant boost in the trail's direction (now much stronger)
-			velocity = trail_direction.normalized() * abs(jump_velocity) * 1.5
-			can_double_jump = true
+			# Instant boost in the trail's direction
+			velocity = trail_direction.normalized() * abs(jump_velocity)
 			print("Double Jump boost! Velocity: ", velocity)
 		"shield":
 			activate_shield(3.0)
