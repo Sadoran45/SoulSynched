@@ -67,6 +67,10 @@ position = Vector2(1671, 591)
 [node name="Player" parent="." unique_id=1262179251 instance=ExtResource("3_bo4dx")]
 position = Vector2(1675, 589)
 
+[node name="Door" parent="." unique_id=129451375 instance=ExtResource("8_cleqw")]
+position = Vector2(1599, 294)
+next_level_path = "res://scenes/level3.tscn"
+
 [node name="Environment" type="Node2D" parent="." unique_id=1310113730]
 
 [node name="Floor" type="StaticBody2D" parent="Environment" unique_id=235499246]
@@ -222,10 +226,6 @@ position = Vector2(1085, 80.99999)
 rotation = 1.5620697
 scale = Vector2(0.889, 0.889)
 fire_rate = 4.0
-
-[node name="Door" parent="." unique_id=129451375 instance=ExtResource("8_cleqw")]
-position = Vector2(1599, 294)
-next_level_path = "res://scenes/level3.tscn"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2117043727]
 scale = Vector2(0.5, 0.5)

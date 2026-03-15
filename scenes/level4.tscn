@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://btrwopjyo72sd"]
+[gd_scene format=4 uid="uid://bicesddunfvoq"]
 
 [ext_resource type="Texture2D" uid="uid://0l5ryg8gwpd7" path="res://resources/background/forest.png" id="1_q6sfj"]
 [ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="2_5cjb5"]

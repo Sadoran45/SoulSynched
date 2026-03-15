@@ -12,6 +12,8 @@ rotation = -1.5707964
 scale = Vector2(1.71, 1.71)
 script = ExtResource("1_script")
 projectile_scene = ExtResource("3_packed")
+fire_rate = 2.4699999999999998
+reload_time = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=937885303]
 rotation = 1.5707964

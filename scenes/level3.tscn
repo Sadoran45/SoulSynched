@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dxrvk6emg1o65"]
+[gd_scene format=4 uid="uid://dmivcu63lh4t2"]
 
 [ext_resource type="Texture2D" uid="uid://0l5ryg8gwpd7" path="res://resources/background/forest.png" id="1_b72m1"]
 [ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="2_b72m1"]
@@ -119,12 +119,12 @@ scale = Vector2(13.239332, 0.23920703)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor12" unique_id=1418975259]
 shape = SubResource("RectangleShape2D_ayd5w")
 
+[node name="Player" parent="." unique_id=186049346 instance=ExtResource("3_5mhml")]
+position = Vector2(-279, 581)
+
 [node name="Door2" parent="." unique_id=757050443 instance=ExtResource("2_b72m1")]
 position = Vector2(-359, 12)
 next_level_path = "res://scenes/level4.tscn"
-
-[node name="Player" parent="." unique_id=186049346 instance=ExtResource("3_5mhml")]
-position = Vector2(-279, 581)
 
 [node name="StartMarker" type="Marker2D" parent="." unique_id=1912714274 groups=["start_marker"]]
 position = Vector2(-283, 583)
