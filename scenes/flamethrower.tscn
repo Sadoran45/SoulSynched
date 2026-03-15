@@ -41,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6at07"]
-size = Vector2(135, 35)
+size = Vector2(374, 35)
 
 [node name="Flamethrower" type="StaticBody2D" unique_id=289239917 groups=["traps"]]
 script = ExtResource("1_script")
@@ -58,14 +58,14 @@ texture = ExtResource("2_rkefd")
 position = Vector2(35, 16)
 
 [node name="FlameSprite" type="AnimatedSprite2D" parent="FireArea" unique_id=1085246876]
-position = Vector2(70, -22)
-scale = Vector2(0.15, 0.15)
+position = Vector2(200.99998, -21)
+scale = Vector2(0.43, 0.15)
 sprite_frames = SubResource("SpriteFrames_1")
 animation = &"fire"
-frame_progress = 0.8870726
+frame_progress = 0.6628112
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea" unique_id=56087646]
-position = Vector2(57.5, -7.5)
+position = Vector2(177, -7.5)
 shape = SubResource("RectangleShape2D_6at07")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

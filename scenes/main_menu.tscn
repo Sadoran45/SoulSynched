@@ -19,35 +19,35 @@ script = ExtResource("1_main")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.5985023, 0.5985023)
+scale = Vector2(1.0026743, 1.0026743)
 texture = ExtResource("2_wu84c")
 
 [node name="Play" type="TextureButton" parent="." unique_id=327793822]
 custom_minimum_size = Vector2(2.48, 0)
 layout_mode = 0
-offset_left = 439.0
-offset_top = 263.0
-offset_right = 939.0
-offset_bottom = 439.0
-scale = Vector2(0.5273368, 0.5273368)
+offset_left = 738.0
+offset_top = 437.0
+offset_right = 1238.0
+offset_bottom = 613.0
+scale = Vector2(0.8834504, 0.8834504)
 texture_normal = ExtResource("3_8ln24")
 
 [node name="Credits" type="TextureButton" parent="." unique_id=2085577551]
 layout_mode = 0
-offset_left = 439.0
-offset_top = 356.0
-offset_right = 949.0
-offset_bottom = 541.0
-scale = Vector2(0.5273368, 0.5273368)
+offset_left = 738.0
+offset_top = 592.0
+offset_right = 1248.0
+offset_bottom = 777.0
+scale = Vector2(0.88345045, 0.88345045)
 texture_normal = ExtResource("4_rtw2f")
 
 [node name="Leave" type="TextureButton" parent="." unique_id=1704870775]
 layout_mode = 0
-offset_left = 439.0
-offset_top = 454.00003
-offset_right = 949.0
-offset_bottom = 639.0
-scale = Vector2(0.5273368, 0.5273368)
+offset_left = 738.0
+offset_top = 755.00006
+offset_right = 1248.0
+offset_bottom = 940.00006
+scale = Vector2(0.88345045, 0.88345045)
 texture_normal = ExtResource("5_8ln24")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
