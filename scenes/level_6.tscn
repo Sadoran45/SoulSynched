@@ -57,7 +57,7 @@ texture = ExtResource("1_wg3te")
 shape = SubResource("RectangleShape2D_wg3te")
 
 [node name="Floor5" type="StaticBody2D" parent="Environment" unique_id=36612659]
-position = Vector2(1098, 292)
+position = Vector2(1098, 317.00003)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
 
@@ -69,7 +69,7 @@ texture = ExtResource("1_wg3te")
 shape = SubResource("RectangleShape2D_4t8k6")
 
 [node name="Floor2" type="StaticBody2D" parent="Environment" unique_id=2133327298]
-position = Vector2(45, 86.999985)
+position = Vector2(45, 136.99998)
 scale = Vector2(12.233028, 1.8984729)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor2" unique_id=1980599499]
@@ -80,7 +80,7 @@ texture = ExtResource("1_wg3te")
 shape = SubResource("RectangleShape2D_jywgt")
 
 [node name="Floor6" type="StaticBody2D" parent="Environment" unique_id=920064609]
-position = Vector2(789.99994, 193)
+position = Vector2(789.99994, 243)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
 
@@ -92,7 +92,7 @@ texture = ExtResource("1_wg3te")
 shape = SubResource("RectangleShape2D_4t8k6")
 
 [node name="Floor7" type="StaticBody2D" parent="Environment" unique_id=1348426277]
-position = Vector2(1077, 94)
+position = Vector2(1077, 166)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
 
@@ -104,7 +104,7 @@ texture = ExtResource("1_wg3te")
 shape = SubResource("RectangleShape2D_4t8k6")
 
 [node name="Floor8" type="StaticBody2D" parent="Environment" unique_id=853253974]
-position = Vector2(789.0001, -13)
+position = Vector2(789, 86.00001)
 rotation = 3.1504247
 scale = Vector2(1.8394246, 0.29630616)
 
@@ -116,7 +116,7 @@ texture = ExtResource("1_wg3te")
 shape = SubResource("RectangleShape2D_4t8k6")
 
 [node name="Floor9" type="StaticBody2D" parent="Environment" unique_id=742908418]
-position = Vector2(976.9999, 371)
+position = Vector2(976.9999, 398)
 rotation = 3.1504247
 scale = Vector2(3.7997007, 0.29630616)
 
@@ -128,7 +128,7 @@ texture = ExtResource("1_wg3te")
 shape = SubResource("RectangleShape2D_4t8k6")
 
 [node name="Floor10" type="StaticBody2D" parent="Environment" unique_id=1642202895]
-position = Vector2(831, 454.00003)
+position = Vector2(831, 481)
 rotation = 3.1504247
 scale = Vector2(6.118551, 0.29630616)
 
@@ -140,7 +140,7 @@ texture = ExtResource("1_wg3te")
 shape = SubResource("RectangleShape2D_4t8k6")
 
 [node name="Floor11" type="StaticBody2D" parent="Environment" unique_id=67581545]
-position = Vector2(-364, -158)
+position = Vector2(-364, -107.99999)
 scale = Vector2(6.113029, 2.5784736)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor11" unique_id=2009793491]
@@ -151,7 +151,7 @@ texture = ExtResource("1_wg3te")
 shape = SubResource("RectangleShape2D_jywgt")
 
 [node name="Floor12" type="StaticBody2D" parent="Environment" unique_id=247841672]
-position = Vector2(93.99997, 39.000008)
+position = Vector2(93.99997, 89.00001)
 scale = Vector2(-4.976721, 1.7980917)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor12" unique_id=1876812797]
@@ -162,7 +162,7 @@ texture = ExtResource("1_wg3te")
 shape = SubResource("RectangleShape2D_jywgt")
 
 [node name="Floor13" type="StaticBody2D" parent="Environment" unique_id=375499101]
-position = Vector2(390.99997, -299)
+position = Vector2(390.99997, -249)
 rotation = 3.1504247
 scale = Vector2(12.928177, 0.29630616)
 
@@ -184,18 +184,18 @@ spirit_trail_scene = ExtResource("4_hi6ks")
 [node name="Traps" type="Node2D" parent="." unique_id=236781544]
 position = Vector2(-221, -39)
 
-[node name="MeleeMonster" parent="Traps" unique_id=949551552 instance=ExtResource("5_6x5s0")]
-position = Vector2(-32, 508)
-scale = Vector2(0.76, 0.76)
-detection_radius = 200.0
-
 [node name="MeleeMonster2" parent="Traps" unique_id=1911609280 instance=ExtResource("5_6x5s0")]
-position = Vector2(100, 508)
-scale = Vector2(0.7199997, 0.7199997)
+position = Vector2(114, 506)
+scale = Vector2(0.7841309, 0.7981632)
 detection_radius = 200.0
 
 [node name="MeleeMonster3" parent="Traps" unique_id=1626039645 instance=ExtResource("5_6x5s0")]
 position = Vector2(562, 516)
+
+[node name="MeleeMonster4" parent="Traps" unique_id=273515926 instance=ExtResource("5_6x5s0")]
+position = Vector2(-56, 503)
+scale = Vector2(0.7841309, 0.7981632)
+detection_radius = 200.0
 
 [node name="StartMarker" type="Marker2D" parent="." unique_id=1178234203 groups=["start_marker"]]
 position = Vector2(-549, 500)
@@ -204,6 +204,6 @@ position = Vector2(-549, 500)
 position = Vector2(129, -141)
 
 [node name="Turret" parent="." unique_id=1658400575 instance=ExtResource("6_uwnnm")]
-position = Vector2(1070, -220)
+position = Vector2(1070, -167)
 rotation = 3.14159
 fire_rate = 3.0
