@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b6n8j4ayo25bb" path="res://scenes/melee_monster.tscn" id="5_packed"]
 [ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="6_packed"]
 [ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="8_packed"]
-[ext_resource type="PackedScene" uid="uid://0811ssiclwrq" path="res://scenes/flamethrower.tscn" id="9_8c41q"]
 [ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="9_texture"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
@@ -28,14 +27,13 @@ offset_top = 20.0
 offset_right = 300.0
 offset_bottom = 60.0
 theme_override_font_sizes/font_size = 24
-text = "Spirit Phase: Place Trails (1=Jump 2=Shield 3=Fire)"
+text = "Spirit Phase: Place 3 Trails (Space)"
 
 [node name="StartMarker" type="Marker2D" parent="." unique_id=833628017 groups=["start_marker"]]
 position = Vector2(100, 500)
 
 [node name="Player" parent="." unique_id=977844717 instance=ExtResource("1_packed")]
-position = Vector2(99.99999, 390)
-scale = Vector2(2.9520473, 2.9520473)
+position = Vector2(100, 500)
 
 [node name="Environment" type="Node2D" parent="." unique_id=1651158066]
 
@@ -59,16 +57,11 @@ position = Vector2(600, 520)
 position = Vector2(1000, 500)
 
 [node name="Turret" parent="Traps" unique_id=2026450811 instance=ExtResource("6_packed")]
-position = Vector2(439.99988, 477.99994)
-rotation = -1.466991
+position = Vector2(1500, 450)
+rotation = 3.14159
 
 [node name="Door" parent="." unique_id=1847631723 instance=ExtResource("8_packed")]
 position = Vector2(1800, 500)
-next_level_path = "res://scenes/level_02.tscn"
 
 [node name="Door2" parent="." unique_id=733952368 instance=ExtResource("8_packed")]
-position = Vector2(1280, 312)
-
-[node name="Flamethrower" parent="." unique_id=289239917 instance=ExtResource("9_8c41q")]
-position = Vector2(311, 503)
-rotation = -2.944446
+position = Vector2(1325, 478)
