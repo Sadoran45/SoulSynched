@@ -1,20 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://e123456789012"]
+[gd_scene format=3 uid="uid://6n8j4ayo25bb"]
 
-[ext_resource type="Script" path="res://scripts/trap.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://csq306j5m7v3e" path="res://icon.svg" id="2_texture"]
+[ext_resource type="Script" uid="uid://mbxe1w7quqbe" path="res://scripts/trap.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://d2nhtaou3ym5" path="res://resources/spikes/spikes.png" id="2_xbcdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(64, 64)
+size = Vector2(159, 75)
 
-[node name="Spikes" type="Area2D" groups=["traps"]]
+[node name="Spikes" type="Area2D" unique_id=1283248642 groups=["traps"]]
 script = ExtResource("1_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1687451622]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_texture")
+texture = ExtResource("2_xbcdo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1223475109]
+position = Vector2(-0.5, 5.5)
 shape = SubResource("RectangleShape2D_1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
