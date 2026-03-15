@@ -144,7 +144,7 @@ position = Vector2(-0.16845703, 72.572174)
 shape = SubResource("RectangleShape2D_2ku1j")
 
 [node name="Player" parent="." unique_id=1251124786 instance=ExtResource("2_bbk5w")]
-position = Vector2(801, 87)
+position = Vector2(1076, 489)
 
 [node name="GameManager" type="Node" parent="." unique_id=1258673517 node_paths=PackedStringArray("player_node")]
 script = ExtResource("3_conm7")
@@ -163,7 +163,7 @@ rotation = 1.5620697
 scale = Vector2(-1.28, 1.428)
 
 [node name="StartMarker" type="Marker2D" parent="." unique_id=110835123 groups=["start_marker"]]
-position = Vector2(821, 87)
+position = Vector2(1076, 493)
 
 [node name="Door2" parent="." unique_id=278255388 instance=ExtResource("7_f31uk")]
 position = Vector2(1088, -38)

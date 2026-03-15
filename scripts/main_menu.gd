@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	title_label.modulate.a = 0.85 + 0.15 * sin(_time * 2.0)
 
 func _on_play_pressed() -> void:
-	SceneManager.go_to("res://scenes/level.tscn")
+	SceneManager.go_to("res://scenes/level1.tscn")
 
 func _on_how_to_play_pressed() -> void:
 	how_to_play_panel.visible = true

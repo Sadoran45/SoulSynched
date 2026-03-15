@@ -55,9 +55,25 @@ func _on_timer_timeout() -> void:
 
 func fire() -> void:
 	if not projectile_scene: return
+	
+	var player = get_tree().get_first_node_in_group("player")
+	if not player: return
+	
+	# Only fire at the player if they are in the BODY state
+	# player.state == 1 is PlayerState.BODY (enum starts at 0 for SPIRIT)
+	if player.get("state") != 1:
+		return
+
 	var proj = projectile_scene.instantiate()
 	proj.global_position = muzzle.global_position
-	proj.velocity = Vector2.RIGHT.rotated(rotation) * proj.speed
+	
+	# Calculate direction to player
+	var target_dir = (player.global_position - muzzle.global_position).normalized()
+	proj.velocity = target_dir * proj.speed
+	
+	# Rotate the projectile to face its movement direction
+	proj.rotation = target_dir.angle()
+	
 	proj.shooter = self
 	get_parent().add_child(proj)
 

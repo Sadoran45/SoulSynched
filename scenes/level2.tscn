@@ -225,7 +225,7 @@ fire_rate = 4.0
 
 [node name="Door" parent="." unique_id=129451375 instance=ExtResource("8_cleqw")]
 position = Vector2(1599, 294)
-next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/level3.tscn"
+next_level_path = "res://scenes/level3.tscn"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2117043727]
 scale = Vector2(0.5, 0.5)
