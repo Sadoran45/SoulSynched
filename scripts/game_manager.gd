@@ -6,8 +6,14 @@ extends Node
 enum GamePhase { SPIRIT_PHASE, BODY_PHASE }
 var current_phase = GamePhase.SPIRIT_PHASE
 
-var trail_types_to_place = [0, 1, 2] # DOUBLE_JUMP, SHIELD, FIREBALL
-var current_trail_index = 0
+var trails_placed := { 0: false, 1: false, 2: false } # DOUBLE_JUMP, SHIELD, FIREBALL
+var rotating_trail: Area2D = null
+
+var trail_actions := {
+	"place_double_jump": 0,
+	"place_shield": 1,
+	"place_fireball": 2,
+}
 
 func _ready() -> void:
 	add_to_group("game_manager")
@@ -20,43 +26,64 @@ func restart_level() -> void:
 	get_tree().call_deferred("reload_current_scene")
 
 func _input(event: InputEvent) -> void:
-	if current_phase == GamePhase.SPIRIT_PHASE:
-		if event.is_action_pressed("ui_accept"):
-			place_trail()
+	if current_phase != GamePhase.SPIRIT_PHASE:
+		return
+
+	# If currently rotating a trail, only accept confirm
+	if rotating_trail != null:
+		if event.is_action_pressed("confirm_placement"):
+			confirm_trail_placement()
+		return
+
+	# Normal trail placement
+	for action in trail_actions:
+		if event.is_action_pressed(action):
+			var trail_type: int = trail_actions[action]
+			if not trails_placed[trail_type]:
+				place_trail(trail_type)
+			break
 
 func start_spirit_phase() -> void:
 	current_phase = GamePhase.SPIRIT_PHASE
 	player_node.set_state(0) # SPIRIT
-	update_label("Spirit Phase: Place 3 Trails (Space)")
+	update_label("Spirit Phase: Place Trails (1=Jump 2=Shield 3=Fire)")
 	get_tree().call_group("traps", "set_active", false)
 	get_tree().call_group("enemies", "set_active", false)
 
-func place_trail() -> void:
-	if current_trail_index < trail_types_to_place.size():
-		var trail = spirit_trail_scene.instantiate()
-		trail.global_position = player_node.global_position
-		trail.type = trail_types_to_place[current_trail_index]
-		add_child(trail)
-		current_trail_index += 1
-		
-		if current_trail_index >= trail_types_to_place.size():
-			start_body_phase()
+func place_trail(trail_type: int) -> void:
+	var trail = spirit_trail_scene.instantiate()
+	trail.global_position = player_node.global_position
+	trail.type = trail_type
+	add_child(trail)
+	trails_placed[trail_type] = true
+	rotating_trail = trail
+	trail.start_rotating()
+	update_label("Rotate with mouse, click to confirm")
+
+func confirm_trail_placement() -> void:
+	rotating_trail.confirm_rotation()
+	rotating_trail = null
+
+	if trails_placed.values().all(func(v): return v):
+		start_body_phase()
+	else:
+		update_label("Spirit Phase: Place Trails (1=Jump 2=Shield 3=Fire)")
 
 func start_body_phase() -> void:
 	current_phase = GamePhase.BODY_PHASE
 	update_label("Body Phase: Reach the Door!")
-	
+
 	# 1. Warp the player
 	var start_marker = get_tree().get_first_node_in_group("start_marker")
 	if start_marker:
 		player_node.global_position = start_marker.global_position
-	
+
 	# 2. Wait a frame to ensure the position is updated in physics
 	await get_tree().process_frame
-	
+
 	# 3. Enable Body mode
 	player_node.set_state(1) # BODY
-	
+
 	get_tree().call_group("traps", "set_active", true)
 	get_tree().call_group("enemies", "set_active", true)
 
