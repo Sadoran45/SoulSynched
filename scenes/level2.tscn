@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cdjubhjmj0jx8"]
 
-[ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="1_packed"]
-[ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="2_script"]
-[ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="3_packed"]
-[ext_resource type="PackedScene" uid="uid://b6n8j4ayo25bb" path="res://scenes/melee_monster.tscn" id="5_packed"]
-[ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="6_packed"]
-[ext_resource type="PackedScene" uid="uid://0811ssiclwrq" path="res://scenes/flamethrower.tscn" id="7_flame"]
-[ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="8_packed"]
-[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="9_texture"]
+[ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="1_hrcei"]
+[ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="2_xa7n4"]
+[ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="3_bo4dx"]
+[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="4_76toy"]
+[ext_resource type="PackedScene" uid="uid://b6n8j4ayo25bb" path="res://scenes/melee_monster.tscn" id="5_8g4ke"]
+[ext_resource type="PackedScene" uid="uid://0811ssiclwrq" path="res://scenes/flamethrower.tscn" id="6_56gwk"]
+[ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="7_ve5ok"]
+[ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="8_cleqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
 size = Vector2(128, 128)
@@ -15,9 +15,9 @@ size = Vector2(128, 128)
 [node name="Level" type="Node2D" unique_id=1964398626]
 
 [node name="GameManager" type="Node" parent="." unique_id=1618923607 node_paths=PackedStringArray("player_node")]
-script = ExtResource("2_script")
+script = ExtResource("1_hrcei")
 player_node = NodePath("../Player")
-spirit_trail_scene = ExtResource("3_packed")
+spirit_trail_scene = ExtResource("2_xa7n4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1945684132]
 
@@ -32,7 +32,7 @@ text = "Spirit Phase: Place Trails (1=Jump 2=Shield 3=Fire)"
 [node name="StartMarker" type="Marker2D" parent="." unique_id=2059238185 groups=["start_marker"]]
 position = Vector2(1671, 591)
 
-[node name="Player" parent="." unique_id=1262179251 instance=ExtResource("1_packed")]
+[node name="Player" parent="." unique_id=1262179251 instance=ExtResource("3_bo4dx")]
 position = Vector2(1675, 589)
 
 [node name="Environment" type="Node2D" parent="." unique_id=1310113730]
@@ -43,7 +43,7 @@ scale = Vector2(9.243157, 0.40980864)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor" unique_id=60262523]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor" unique_id=1923902060]
 shape = SubResource("RectangleShape2D_1")
@@ -54,7 +54,7 @@ scale = Vector2(14, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Ceiling" unique_id=2035517388]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ceiling" unique_id=37197688]
 shape = SubResource("RectangleShape2D_1")
@@ -65,7 +65,7 @@ scale = Vector2(0.25, 5.8139296)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/WallLeft" unique_id=700506093]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WallLeft" unique_id=1160534626]
 shape = SubResource("RectangleShape2D_1")
@@ -76,7 +76,7 @@ scale = Vector2(0.25, 1.6871914)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/WallRight" unique_id=137683839]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WallRight" unique_id=1858161070]
 shape = SubResource("RectangleShape2D_1")
@@ -88,7 +88,7 @@ scale = Vector2(0.25, 1.6871914)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/WallRight2" unique_id=1966858439]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WallRight2" unique_id=1600207889]
 shape = SubResource("RectangleShape2D_1")
@@ -99,7 +99,7 @@ scale = Vector2(0.25, 5.1290617)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/WallRight3" unique_id=1151278794]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WallRight3" unique_id=1479033335]
 shape = SubResource("RectangleShape2D_1")
@@ -110,7 +110,7 @@ scale = Vector2(0.25, 0.79200244)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/DividerUpper" unique_id=1717817061]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/DividerUpper" unique_id=1708923979]
 shape = SubResource("RectangleShape2D_1")
@@ -122,7 +122,7 @@ scale = Vector2(1.1999927, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL1" unique_id=1022870888]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformL1" unique_id=904284448]
 shape = SubResource("RectangleShape2D_1")
@@ -133,7 +133,7 @@ scale = Vector2(3.8230536, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL2" unique_id=221645999]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformL2" unique_id=1742040418]
 shape = SubResource("RectangleShape2D_1")
@@ -145,7 +145,7 @@ scale = Vector2(1.3594285, 0.225)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL3" unique_id=1587707595]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformL3" unique_id=1747962112]
 shape = SubResource("RectangleShape2D_1")
@@ -156,7 +156,7 @@ scale = Vector2(1.9152316, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL4" unique_id=1820014570]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformL4" unique_id=17900130]
 shape = SubResource("RectangleShape2D_1")
@@ -167,7 +167,7 @@ scale = Vector2(8.2, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/UpperPlatform" unique_id=802577413]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/UpperPlatform" unique_id=172479301]
 shape = SubResource("RectangleShape2D_1")
@@ -178,7 +178,7 @@ scale = Vector2(2.5, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/RightPlatformLower" unique_id=1420620665]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RightPlatformLower" unique_id=164968116]
 shape = SubResource("RectangleShape2D_1")
@@ -189,7 +189,7 @@ scale = Vector2(2.5, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/RightPlatformLower3" unique_id=20930864]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RightPlatformLower3" unique_id=1832413295]
 shape = SubResource("RectangleShape2D_1")
@@ -200,7 +200,7 @@ scale = Vector2(1.8000001, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/RightPlatformLower2" unique_id=1495069709]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RightPlatformLower2" unique_id=1968581681]
 shape = SubResource("RectangleShape2D_1")
@@ -212,7 +212,7 @@ scale = Vector2(0.51487136, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL5" unique_id=1846520271]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformL5" unique_id=709610043]
 shape = SubResource("RectangleShape2D_1")
@@ -224,7 +224,7 @@ scale = Vector2(0.51487136, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL6" unique_id=1451275791]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformL6" unique_id=698225297]
 shape = SubResource("RectangleShape2D_1")
@@ -236,34 +236,34 @@ scale = Vector2(0.714579, 0.1694287)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL7" unique_id=1312737359]
 modulate = Color(0.25, 0.25, 0.25, 1)
-texture = ExtResource("9_texture")
+texture = ExtResource("4_76toy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformL7" unique_id=906983703]
 shape = SubResource("RectangleShape2D_1")
 
 [node name="Traps" type="Node2D" parent="." unique_id=348217720]
 
-[node name="MeleeMonster1" parent="Traps" unique_id=184840127 instance=ExtResource("5_packed")]
+[node name="MeleeMonster1" parent="Traps" unique_id=184840127 instance=ExtResource("5_8g4ke")]
 position = Vector2(1419, 793)
 
-[node name="MeleeMonster2" parent="Traps" unique_id=1469332954 instance=ExtResource("5_packed")]
+[node name="MeleeMonster2" parent="Traps" unique_id=1469332954 instance=ExtResource("5_8g4ke")]
 position = Vector2(1050, 787)
 
-[node name="MeleeMonster3" parent="Traps" unique_id=1748594131 instance=ExtResource("5_packed")]
+[node name="MeleeMonster3" parent="Traps" unique_id=1748594131 instance=ExtResource("5_8g4ke")]
 position = Vector2(702, 782)
 
-[node name="Flamethrower" parent="Traps" unique_id=781068306 instance=ExtResource("7_flame")]
+[node name="Flamethrower" parent="Traps" unique_id=781068306 instance=ExtResource("6_56gwk")]
 position = Vector2(883, 414)
 active_time = 2.5
 flame_range = 200
 start_on = true
 
-[node name="Turret" parent="Traps" unique_id=1500942381 instance=ExtResource("6_packed")]
+[node name="Turret" parent="Traps" unique_id=1500942381 instance=ExtResource("7_ve5ok")]
 position = Vector2(1085.0001, 89)
 rotation = 3.14159
 scale = Vector2(0.59436744, 0.59436744)
 fire_rate = 4.0
 
-[node name="Door" parent="." unique_id=129451375 instance=ExtResource("8_packed")]
+[node name="Door" parent="." unique_id=129451375 instance=ExtResource("8_cleqw")]
 position = Vector2(1599, 294)
-next_level_path = "res://scenes/main_menu.tscn"
+next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/level3.tscn"

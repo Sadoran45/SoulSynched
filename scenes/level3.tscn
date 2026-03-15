@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dmivcu63lh4t2"]
 
-[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_ayd5w"]
-[ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="2_1fhj5"]
-[ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="3_16pka"]
-[ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="4_1jdk1"]
-[ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="5_6p2dc"]
-[ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="6_6p2dc"]
+[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_6lxtr"]
+[ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="2_b72m1"]
+[ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="3_5mhml"]
+[ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="4_rupth"]
+[ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="5_6qt4k"]
+[ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="6_fh4ka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhj5"]
 size = Vector2(128, 128)
@@ -23,7 +23,7 @@ scale = Vector2(0.25, 5.1290617)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/WallRight3" unique_id=490011208]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_ayd5w")
+texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WallRight3" unique_id=1451603066]
 shape = SubResource("RectangleShape2D_1fhj5")
@@ -35,7 +35,7 @@ scale = Vector2(1.8394246, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor6" unique_id=2020240740]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_ayd5w")
+texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor6" unique_id=961708097]
 shape = SubResource("RectangleShape2D_ayd5w")
@@ -47,7 +47,7 @@ scale = Vector2(1.8394246, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor7" unique_id=976970432]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_ayd5w")
+texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor7" unique_id=1881330474]
 shape = SubResource("RectangleShape2D_ayd5w")
@@ -59,7 +59,7 @@ scale = Vector2(13.239332, 0.23920703)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor8" unique_id=1620380897]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_ayd5w")
+texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor8" unique_id=2083256348]
 shape = SubResource("RectangleShape2D_ayd5w")
@@ -71,7 +71,7 @@ scale = Vector2(1.8394246, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor9" unique_id=1152046932]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_ayd5w")
+texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor9" unique_id=1538477389]
 shape = SubResource("RectangleShape2D_ayd5w")
@@ -83,7 +83,7 @@ scale = Vector2(1.8394246, 0.29630616)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor10" unique_id=256829476]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_ayd5w")
+texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor10" unique_id=369017090]
 shape = SubResource("RectangleShape2D_ayd5w")
@@ -94,7 +94,7 @@ scale = Vector2(0.25, 6.9690614)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/WallRight4" unique_id=221878215]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_ayd5w")
+texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/WallRight4" unique_id=484523740]
 shape = SubResource("RectangleShape2D_1fhj5")
@@ -106,7 +106,7 @@ scale = Vector2(1.7584323, -0.34557757)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor11" unique_id=243034503]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_ayd5w")
+texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor11" unique_id=833087213]
 shape = SubResource("RectangleShape2D_ayd5w")
@@ -118,25 +118,26 @@ scale = Vector2(13.239332, 0.23920703)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Floor12" unique_id=5344914]
 modulate = Color(0.2, 0.2, 0.2, 1)
-texture = ExtResource("1_ayd5w")
+texture = ExtResource("1_6lxtr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor12" unique_id=1418975259]
 shape = SubResource("RectangleShape2D_ayd5w")
 
-[node name="Door2" parent="." unique_id=757050443 instance=ExtResource("2_1fhj5")]
+[node name="Door2" parent="." unique_id=757050443 instance=ExtResource("2_b72m1")]
 position = Vector2(-359, 161)
+next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/level4.tscn"
 
-[node name="Player" parent="." unique_id=186049346 instance=ExtResource("3_16pka")]
+[node name="Player" parent="." unique_id=186049346 instance=ExtResource("3_5mhml")]
 position = Vector2(-279, 581)
 
 [node name="StartMarker" type="Marker2D" parent="." unique_id=1912714274 groups=["start_marker"]]
 position = Vector2(-283, 583)
 
 [node name="GameManager" type="Node" parent="." unique_id=452925230 node_paths=PackedStringArray("player_node")]
-script = ExtResource("4_1jdk1")
+script = ExtResource("4_rupth")
 player_node = NodePath("../Player")
-spirit_trail_scene = ExtResource("5_6p2dc")
+spirit_trail_scene = ExtResource("5_6qt4k")
 
-[node name="Turret" parent="." unique_id=776471767 instance=ExtResource("6_6p2dc")]
+[node name="Turret" parent="." unique_id=776471767 instance=ExtResource("6_fh4ka")]
 position = Vector2(-84, 254)
 rotation = 0.023125648
