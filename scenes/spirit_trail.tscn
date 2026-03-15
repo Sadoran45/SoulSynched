@@ -1,19 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://d123456789012"]
+[gd_scene format=3 uid="uid://d1234568aa012"]
 
-[ext_resource type="Script" path="res://scripts/spirit_trail.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://csq306j5m7v3e" path="res://icon.svg" id="2_texture"]
+[ext_resource type="Script" uid="uid://dgpn8vo3fc3li" path="res://scripts/spirit_trail.gd" id="1_script"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 32.0
 
-[node name="SpiritTrail" type="Area2D"]
+[node name="SpiritTrail" type="Area2D" unique_id=1489838714]
 script = ExtResource("1_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_texture")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1396586102]
+scale = Vector2(0.3, 0.3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=734323383]
 shape = SubResource("CircleShape2D_1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

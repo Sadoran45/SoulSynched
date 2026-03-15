@@ -14,9 +14,12 @@ var is_invincible: bool = false
 var has_shield: bool = false
 var can_double_jump: bool = false
 var spawn_protection: bool = false
+var _coyote_timer: float = 0.0
+const COYOTE_TIME: float = 0.1
 var _anim_time: float = 0.0
 var _playing_fireball_anim: bool = false
 var _fireball_anim_time: float = 0.0
+var _current_texture: Texture2D = null
 
 signal player_died
 
@@ -25,6 +28,8 @@ signal player_died
 
 var _idle_texture: Texture2D = preload("res://resources/idle.png")
 var _fireball_texture: Texture2D = preload("res://resources/buyu.png")
+var _run_texture: Texture2D = preload("res://resources/run.png")
+var _spirit_run_texture: Texture2D = preload("res://resources/ruh_run.png")
 
 func _ready() -> void:
 	# Start in Spirit state with collision disabled
@@ -62,19 +67,36 @@ func start_spawn_protection(duration: float) -> void:
 	is_invincible = false
 	sprite.modulate.a = 1.0
 
+func _is_moving() -> bool:
+	return abs(velocity.x) > 10.0
+
+func _set_anim_texture(tex: Texture2D, hframes: int) -> void:
+	if _current_texture != tex:
+		_current_texture = tex
+		sprite.texture = tex
+		sprite.hframes = hframes
+		_anim_time = 0.0
+
 func _process(delta: float) -> void:
 	if _playing_fireball_anim:
 		_fireball_anim_time += delta
 		var frame_idx = int(_fireball_anim_time * 10.0)
 		if frame_idx >= 6:
 			_playing_fireball_anim = false
-			sprite.texture = _idle_texture
-			sprite.hframes = 3
-			_anim_time = 0.0
+			_current_texture = null  # Force refresh on next frame
 		else:
 			sprite.frame = frame_idx
+		return
+
+	_anim_time += delta
+	if state == PlayerState.SPIRIT:
+		_set_anim_texture(_spirit_run_texture, 3)
+		sprite.frame = int(_anim_time * 8.0) % 3
+	elif _is_moving():
+		_set_anim_texture(_run_texture, 7)
+		sprite.frame = int(_anim_time * 10.0) % 7
 	else:
-		_anim_time += delta
+		_set_anim_texture(_idle_texture, 3)
 		sprite.frame = int(_anim_time * 5.0) % 3
 
 func _physics_process(delta: float) -> void:
@@ -86,15 +108,21 @@ func _physics_process(delta: float) -> void:
 func handle_spirit_movement(_delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = direction * spirit_speed
+	if direction.x != 0:
+		sprite.flip_h = direction.x < 0
 	move_and_slide()
 
 func handle_body_movement(delta: float) -> void:
-	if not is_on_floor():
+	if is_on_floor():
+		_coyote_timer = COYOTE_TIME
+	else:
+		_coyote_timer -= delta
 		velocity.y += gravity * delta
 
 	if Input.is_action_just_pressed("ui_accept"):
-		if is_on_floor():
+		if _coyote_timer > 0:
 			velocity.y = jump_velocity
+			_coyote_timer = 0.0
 		elif can_double_jump:
 			velocity.y = jump_velocity
 			can_double_jump = false
@@ -115,8 +143,8 @@ func activate_skill(skill_type: String, trail_direction: Vector2 = Vector2.RIGHT
 
 	match skill_type:
 		"double_jump":
-			velocity = trail_direction * abs(jump_velocity)
-			print("Double Jump boost!")
+			can_double_jump = true
+			print("Double Jump ready!")
 		"shield":
 			activate_shield(3.0)
 		"fireball":

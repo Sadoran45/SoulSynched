@@ -5,16 +5,27 @@ enum TrailType { DOUBLE_JUMP, SHIELD, FIREBALL }
 
 @onready var sprite: Sprite2D = $Sprite2D
 
+var _jump_icon: Texture2D = preload("res://resources/icons/jump_icon.png")
+var _shield_icon: Texture2D = preload("res://resources/icons/guard_icon.png")
+var _fireball_icon: Texture2D = preload("res://resources/icons/fireball_icon.png")
+
 var is_rotating: bool = false
 var rotation_indicator: Line2D
+var _bob_time: float = 0.0
+var _bob_amplitude: float = 6.0
+var _bob_speed: float = 2.0
 
 func _ready() -> void:
 	match type:
-		TrailType.DOUBLE_JUMP: sprite.modulate = Color(0.2, 1.0, 0.2)
-		TrailType.SHIELD: sprite.modulate = Color(1.0, 1.0, 0.2)
-		TrailType.FIREBALL: sprite.modulate = Color(1.0, 0.2, 0.2)
+		TrailType.DOUBLE_JUMP: sprite.texture = _jump_icon
+		TrailType.SHIELD: sprite.texture = _shield_icon
+		TrailType.FIREBALL: sprite.texture = _fireball_icon
+	sprite.modulate = Color(1, 1, 1, 1)
 
 func _process(_delta: float) -> void:
+	_bob_time += _delta
+	sprite.offset.y = sin(_bob_time * _bob_speed) * _bob_amplitude
+
 	if is_rotating:
 		var mouse_pos = get_global_mouse_position()
 		var direction = mouse_pos - global_position
