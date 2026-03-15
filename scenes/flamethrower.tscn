@@ -52,6 +52,7 @@ texture = ExtResource("2_texture")
 [node name="Timer" type="Timer" parent="." unique_id=137843437]
 
 [node name="FireArea" type="Area2D" parent="." unique_id=1650552938]
+position = Vector2(54.06, 0)
 
 [node name="FlameSprite" type="AnimatedSprite2D" parent="FireArea" unique_id=1085246876]
 visible = false

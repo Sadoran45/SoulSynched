@@ -29,10 +29,12 @@ func _input(event: InputEvent) -> void:
 	if current_phase != GamePhase.SPIRIT_PHASE:
 		return
 
-	# If currently rotating a trail, only accept confirm
+	# If currently rotating a trail, accept confirm (Left Click) or cancel (Right Click)
 	if rotating_trail != null:
 		if event.is_action_pressed("confirm_placement"):
 			confirm_trail_placement()
+		elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			cancel_trail_placement()
 		return
 
 	# Normal trail placement
@@ -68,6 +70,13 @@ func confirm_trail_placement() -> void:
 		start_body_phase()
 	else:
 		update_label("Spirit Phase: Place Trails (1=Jump 2=Shield 3=Fire)")
+
+func cancel_trail_placement() -> void:
+	var trail_type = rotating_trail.type
+	trails_placed[trail_type] = false
+	rotating_trail.queue_free()
+	rotating_trail = null
+	update_label("Placement Cancelled. Spirit Phase: Place Trails")
 
 func start_body_phase() -> void:
 	current_phase = GamePhase.BODY_PHASE

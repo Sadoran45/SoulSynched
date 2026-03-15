@@ -20,13 +20,16 @@ func _ready() -> void:
 	set_active(is_active)
 
 func _setup_flame_sprite() -> void:
+	# 1000 is the width of the flame atlas texture
+	var scale_x = flame_range / 1000.0
+	flame_sprite.scale = Vector2(scale_x, 0.45)
 	flame_sprite.position = Vector2(flame_range / 2.0, 0.0)
 	flame_sprite.visible = false
 	flame_sprite.stop()
 
 func _setup_fire_collision() -> void:
 	var shape := RectangleShape2D.new()
-	shape.size = Vector2(flame_range, 30.0)
+	shape.size = Vector2(flame_range, 90.0)
 	fire_collision.shape = shape
 	fire_collision.position = Vector2(flame_range / 2.0, 0.0)
 

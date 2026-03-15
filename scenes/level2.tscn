@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cdjubhjmj0jx8"]
+[gd_scene format=3 uid="uid://cbv5jyuhnyyc"]
 
 [ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="1_hrcei"]
 [ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="2_xa7n4"]
@@ -253,15 +253,16 @@ position = Vector2(1050, 787)
 position = Vector2(702, 782)
 
 [node name="Flamethrower" parent="Traps" unique_id=781068306 instance=ExtResource("6_56gwk")]
-position = Vector2(883, 414)
+position = Vector2(842, 402)
+scale = Vector2(-1, 1)
 active_time = 2.5
-flame_range = 200
+flame_range = 150.0
 start_on = true
 
 [node name="Turret" parent="Traps" unique_id=1500942381 instance=ExtResource("7_ve5ok")]
 position = Vector2(1085.0001, 89)
 rotation = 3.14159
-scale = Vector2(0.59436744, 0.59436744)
+scale = Vector2(0.889, 0.889)
 fire_rate = 4.0
 
 [node name="Door" parent="." unique_id=129451375 instance=ExtResource("8_cleqw")]
