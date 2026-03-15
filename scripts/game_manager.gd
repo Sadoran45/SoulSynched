@@ -23,7 +23,7 @@ func _ready() -> void:
 	start_spirit_phase()
 
 func restart_level() -> void:
-	get_tree().call_deferred("reload_current_scene")
+	SceneManager.go_to(get_tree().current_scene.scene_file_path)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.keycode == KEY_R and event.pressed:
