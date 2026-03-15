@@ -14,11 +14,17 @@ var is_invincible: bool = false
 var has_shield: bool = false
 var can_double_jump: bool = false
 var spawn_protection: bool = false
+var _anim_time: float = 0.0
+var _playing_fireball_anim: bool = false
+var _fireball_anim_time: float = 0.0
 
 signal player_died
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
+
+var _idle_texture: Texture2D = preload("res://resources/idle.png")
+var _fireball_texture: Texture2D = preload("res://resources/buyu.png")
 
 func _ready() -> void:
 	# Start in Spirit state with collision disabled
@@ -55,6 +61,21 @@ func start_spawn_protection(duration: float) -> void:
 	spawn_protection = false
 	is_invincible = false
 	sprite.modulate.a = 1.0
+
+func _process(delta: float) -> void:
+	if _playing_fireball_anim:
+		_fireball_anim_time += delta
+		var frame_idx = int(_fireball_anim_time * 10.0)
+		if frame_idx >= 6:
+			_playing_fireball_anim = false
+			sprite.texture = _idle_texture
+			sprite.hframes = 3
+			_anim_time = 0.0
+		else:
+			sprite.frame = frame_idx
+	else:
+		_anim_time += delta
+		sprite.frame = int(_anim_time * 5.0) % 3
 
 func _physics_process(delta: float) -> void:
 	if state == PlayerState.SPIRIT:
@@ -109,7 +130,15 @@ func activate_shield(duration: float) -> void:
 	if state == PlayerState.BODY:
 		sprite.modulate = Color(1.0, 1.0, 1.0)
 
+func play_fireball_anim() -> void:
+	_playing_fireball_anim = true
+	_fireball_anim_time = 0.0
+	sprite.texture = _fireball_texture
+	sprite.hframes = 6
+	sprite.frame = 0
+
 func shoot_fireball(direction: Vector2 = Vector2.RIGHT) -> void:
+	play_fireball_anim()
 	if not projectile_scene: return
 
 	var fireball = projectile_scene.instantiate()

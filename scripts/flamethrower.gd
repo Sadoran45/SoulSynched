@@ -4,6 +4,8 @@ extends StaticBody2D
 @export var cycle_time: float = 5.0
 @export var active_time: float = 3.0
 @export var flame_range: float = 150.0
+@export var start_on: bool = false
+@export var start_delay: float = 0.0
 
 @onready var fire_area: Area2D = $FireArea
 @onready var timer: Timer = $Timer
@@ -66,7 +68,15 @@ func set_active(active: bool) -> void:
 		return
 
 	if is_active:
-		timer.start()
+		if start_on:
+			start_firing()
+			timer.wait_time = active_time
+			timer.start()
+		elif start_delay > 0.0:
+			timer.wait_time = start_delay
+			timer.start()
+		else:
+			timer.start()
 		modulate = Color(1, 1, 1, 1)
 	else:
 		timer.stop()

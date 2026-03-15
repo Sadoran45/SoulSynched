@@ -34,7 +34,8 @@ text = "Spirit Phase: Place Trails (1=Jump 2=Shield 3=Fire)"
 position = Vector2(100, 500)
 
 [node name="Player" parent="." unique_id=977844717 instance=ExtResource("1_packed")]
-position = Vector2(100, 500)
+position = Vector2(99.99999, 390)
+scale = Vector2(2.9520473, 2.9520473)
 
 [node name="Environment" type="Node2D" parent="." unique_id=1651158066]
 
@@ -58,11 +59,12 @@ position = Vector2(600, 520)
 position = Vector2(1000, 500)
 
 [node name="Turret" parent="Traps" unique_id=2026450811 instance=ExtResource("6_packed")]
-position = Vector2(1500, 450)
-rotation = 3.14159
+position = Vector2(439.99988, 477.99994)
+rotation = -1.466991
 
 [node name="Door" parent="." unique_id=1847631723 instance=ExtResource("8_packed")]
 position = Vector2(1800, 500)
+next_level_path = "res://scenes/level_02.tscn"
 
 [node name="Door2" parent="." unique_id=733952368 instance=ExtResource("8_packed")]
 position = Vector2(1280, 312)
