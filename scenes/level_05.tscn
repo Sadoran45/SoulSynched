@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dlcmds8hfbxrp"]
+[gd_scene format=3 uid="uid://cdjubhjmj0jx8"]
 
 [ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="1_packed"]
 [ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="2_script"]
@@ -105,8 +105,8 @@ texture = ExtResource("9_texture")
 shape = SubResource("RectangleShape2D_1")
 
 [node name="DividerUpper" type="StaticBody2D" parent="Environment" unique_id=941413721]
-position = Vector2(919, 388)
-scale = Vector2(0.25, 1.232)
+position = Vector2(919, 412.99997)
+scale = Vector2(0.25, 0.79200244)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/DividerUpper" unique_id=1717817061]
 modulate = Color(0.2, 0.2, 0.2, 1)
@@ -129,7 +129,7 @@ shape = SubResource("RectangleShape2D_1")
 
 [node name="PlatformL2" type="StaticBody2D" parent="Environment" unique_id=965431086]
 position = Vector2(720, 452)
-scale = Vector2(2.9030535, 0.25)
+scale = Vector2(3.8230536, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL2" unique_id=221645999]
 modulate = Color(0.25, 0.25, 0.25, 1)
@@ -151,8 +151,8 @@ texture = ExtResource("9_texture")
 shape = SubResource("RectangleShape2D_1")
 
 [node name="PlatformL4" type="StaticBody2D" parent="Environment" unique_id=574397808]
-position = Vector2(315.99997, 534)
-scale = Vector2(1.56, 0.25)
+position = Vector2(315, 598)
+scale = Vector2(1.9152316, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL4" unique_id=1820014570]
 modulate = Color(0.25, 0.25, 0.25, 1)
@@ -162,7 +162,7 @@ texture = ExtResource("9_texture")
 shape = SubResource("RectangleShape2D_1")
 
 [node name="UpperPlatform" type="StaticBody2D" parent="Environment" unique_id=433830351]
-position = Vector2(1450, 323)
+position = Vector2(1426, 380)
 scale = Vector2(8.2, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/UpperPlatform" unique_id=802577413]
@@ -173,7 +173,7 @@ texture = ExtResource("9_texture")
 shape = SubResource("RectangleShape2D_1")
 
 [node name="RightPlatformLower" type="StaticBody2D" parent="Environment" unique_id=2035676728]
-position = Vector2(1228, 675)
+position = Vector2(1303, 675)
 scale = Vector2(2.5, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/RightPlatformLower" unique_id=1420620665]
@@ -184,7 +184,7 @@ texture = ExtResource("9_texture")
 shape = SubResource("RectangleShape2D_1")
 
 [node name="RightPlatformLower3" type="StaticBody2D" parent="Environment" unique_id=1171581617]
-position = Vector2(716, 675)
+position = Vector2(629, 675)
 scale = Vector2(2.5, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/RightPlatformLower3" unique_id=20930864]
@@ -203,6 +203,42 @@ modulate = Color(0.25, 0.25, 0.25, 1)
 texture = ExtResource("9_texture")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RightPlatformLower2" unique_id=1968581681]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="PlatformL5" type="StaticBody2D" parent="Environment" unique_id=798252856]
+position = Vector2(407.00003, 471.99997)
+rotation = 2.811533
+scale = Vector2(0.51487136, 0.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL5" unique_id=1846520271]
+modulate = Color(0.25, 0.25, 0.25, 1)
+texture = ExtResource("9_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformL5" unique_id=709610043]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="PlatformL6" type="StaticBody2D" parent="Environment" unique_id=1554257046]
+position = Vector2(458, 456.00006)
+rotation = 2.889614
+scale = Vector2(0.51487136, 0.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL6" unique_id=1451275791]
+modulate = Color(0.25, 0.25, 0.25, 1)
+texture = ExtResource("9_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformL6" unique_id=698225297]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="PlatformL7" type="StaticBody2D" parent="Environment" unique_id=1719113539]
+position = Vector2(235.00002, 530)
+rotation = 3.1344233
+scale = Vector2(0.714579, 0.1694287)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/PlatformL7" unique_id=1312737359]
+modulate = Color(0.25, 0.25, 0.25, 1)
+texture = ExtResource("9_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/PlatformL7" unique_id=906983703]
 shape = SubResource("RectangleShape2D_1")
 
 [node name="Traps" type="Node2D" parent="." unique_id=348217720]
@@ -226,7 +262,8 @@ start_on = true
 position = Vector2(1085.0001, 89)
 rotation = 3.14159
 scale = Vector2(0.59436744, 0.59436744)
+fire_rate = 4.0
 
 [node name="Door" parent="." unique_id=129451375 instance=ExtResource("8_packed")]
-position = Vector2(1602, 221)
+position = Vector2(1599, 294)
 next_level_path = "res://scenes/main_menu.tscn"
