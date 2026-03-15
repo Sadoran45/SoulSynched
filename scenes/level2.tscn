@@ -267,4 +267,4 @@ fire_rate = 4.0
 
 [node name="Door" parent="." unique_id=129451375 instance=ExtResource("8_cleqw")]
 position = Vector2(1599, 294)
-next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/level3.tscn"
+next_level_path = "res://scenes/level3.tscn"

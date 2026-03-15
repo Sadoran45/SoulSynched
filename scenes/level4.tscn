@@ -193,7 +193,7 @@ position = Vector2(-549, 500)
 
 [node name="Door2" parent="." unique_id=318478667 instance=ExtResource("6_jvphm")]
 position = Vector2(129, -141)
-next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/main_menu.tscn"
+next_level_path = ""
 
 [node name="Turret" parent="." unique_id=1658400575 instance=ExtResource("7_g1xgd")]
 position = Vector2(1070, -167)

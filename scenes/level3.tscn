@@ -125,7 +125,7 @@ shape = SubResource("RectangleShape2D_ayd5w")
 
 [node name="Door2" parent="." unique_id=757050443 instance=ExtResource("2_b72m1")]
 position = Vector2(-359, 12)
-next_level_path = "C:/Users/umutp/Desktop/Unity/SoulSynched/scenes/level4.tscn"
+next_level_path = "res://scenes/level4.tscn"
 
 [node name="Player" parent="." unique_id=186049346 instance=ExtResource("3_5mhml")]
 position = Vector2(-279, 581)

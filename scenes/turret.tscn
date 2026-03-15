@@ -23,7 +23,7 @@ position = Vector2(-2, -1)
 shape = SubResource("RectangleShape2D_1")
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=74058779]
-position = Vector2(3, -10)
+position = Vector2(8.77193, 3.5087724)
 
 [node name="Timer" type="Timer" parent="." unique_id=1182192691]
 

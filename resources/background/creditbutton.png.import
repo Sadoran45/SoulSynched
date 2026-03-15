@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8dsujvuceo0v"
-path="res://.godot/imported/flame_thrower.png-2ef716162dbc7c28715d80d20a4a39b8.ctex"
+uid="uid://bdmj4d1med64m"
+path="res://.godot/imported/creditbutton.png-7340d32097e64715f4d08684d898c353.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/flame_thrower/flame_thrower.png"
-dest_files=["res://.godot/imported/flame_thrower.png-2ef716162dbc7c28715d80d20a4a39b8.ctex"]
+source_file="res://resources/background/creditbutton.png"
+dest_files=["res://.godot/imported/creditbutton.png-7340d32097e64715f4d08684d898c353.ctex"]
 
 [params]
 

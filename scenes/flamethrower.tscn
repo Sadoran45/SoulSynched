@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0811ssiclwrq"]
 
 [ext_resource type="Script" uid="uid://cmjrfy0ntsbs8" path="res://scripts/flamethrower.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://b8dsujvuceo0v" path="res://resources/flame_thrower/flame_thrower.png" id="2_texture"]
+[ext_resource type="Texture2D" uid="uid://cuhns2dlx0cej" path="res://resources/flame_thrower/flamethrower.png" id="2_rkefd"]
 [ext_resource type="Texture2D" uid="uid://ddl1rkjmpll7v" path="res://resources/flame/flame.png" id="3_flame"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0"]
@@ -40,27 +40,33 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6at07"]
+size = Vector2(135, 35)
+
 [node name="Flamethrower" type="StaticBody2D" unique_id=289239917 groups=["traps"]]
 script = ExtResource("1_script")
 flame_range = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1982596959]
+position = Vector2(-1.9999999, -23.999998)
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("2_texture")
+texture = ExtResource("2_rkefd")
 
 [node name="Timer" type="Timer" parent="." unique_id=137843437]
 
 [node name="FireArea" type="Area2D" parent="." unique_id=1650552938]
-position = Vector2(30, -17)
+position = Vector2(35, 16)
 
 [node name="FlameSprite" type="AnimatedSprite2D" parent="FireArea" unique_id=1085246876]
-position = Vector2(69, -21)
+position = Vector2(70, -22)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_1")
 animation = &"fire"
-frame_progress = 0.15535845
+frame_progress = 0.322503
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireArea" unique_id=56087646]
+position = Vector2(57.5, -7.5)
+shape = SubResource("RectangleShape2D_6at07")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="FireArea" to="." method="_on_fire_area_body_entered"]

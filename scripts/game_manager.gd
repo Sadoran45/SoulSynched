@@ -98,7 +98,7 @@ func start_body_phase() -> void:
 
 func complete_level(next_level_path: String) -> void:
 	if next_level_path != "" and ResourceLoader.exists(next_level_path):
-		get_tree().change_scene_to_file(next_level_path)
+		SceneManager.go_to(next_level_path)
 	else:
 		update_label("You Win!")
 		player_node.set_physics_process(false)
