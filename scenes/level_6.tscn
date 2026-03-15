@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://bicesddunfvoq"]
+
+[ext_resource type="Texture2D" uid="uid://bk6aeq32d7xgq" path="res://icon.svg" id="1_wg3te"]
+[ext_resource type="PackedScene" uid="uid://c1234568aa012" path="res://scenes/player.tscn" id="2_jywgt"]
+[ext_resource type="Script" uid="uid://cds5ltx7op4ur" path="res://scripts/game_manager.gd" id="3_ku6r7"]
+[ext_resource type="PackedScene" uid="uid://d1234568aa012" path="res://scenes/spirit_trail.tscn" id="4_hi6ks"]
+[ext_resource type="PackedScene" uid="uid://b6n8j4ayo25bb" path="res://scenes/melee_monster.tscn" id="5_6x5s0"]
+[ext_resource type="PackedScene" uid="uid://b0811ssiclwrq" path="res://scenes/door.tscn" id="6_6x5s0"]
+[ext_resource type="PackedScene" uid="uid://dvnwmupqvssji" path="res://scenes/turret.tscn" id="6_uwnnm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jywgt"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wg3te"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t8k6"]
+size = Vector2(128, 128)
+
+[node name="level6" type="Node2D" unique_id=1909912502]
+
+[node name="Environment" type="Node2D" parent="." unique_id=125058418]
+
+[node name="Floor" type="StaticBody2D" parent="Environment" unique_id=11577947]
+position = Vector2(236, 600)
+scale = Vector2(15.319999, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor" unique_id=1197480075]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor" unique_id=2010213439]
+shape = SubResource("RectangleShape2D_jywgt")
+
+[node name="Floor3" type="StaticBody2D" parent="Environment" unique_id=225561983]
+position = Vector2(1189, 153)
+rotation = 1.575545
+scale = Vector2(7.083946, 0.43250135)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor3" unique_id=2117121560]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor3" unique_id=677575677]
+shape = SubResource("RectangleShape2D_wg3te")
+
+[node name="Floor4" type="StaticBody2D" parent="Environment" unique_id=640665401]
+position = Vector2(-711, 153)
+rotation = 1.575545
+scale = Vector2(7.083946, 0.43250135)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor4" unique_id=1513722323]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor4" unique_id=2107449755]
+shape = SubResource("RectangleShape2D_wg3te")
+
+[node name="Floor5" type="StaticBody2D" parent="Environment" unique_id=36612659]
+position = Vector2(1098, 292)
+rotation = 3.1504247
+scale = Vector2(1.8394246, 0.29630616)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor5" unique_id=985823729]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor5" unique_id=676658182]
+shape = SubResource("RectangleShape2D_4t8k6")
+
+[node name="Floor2" type="StaticBody2D" parent="Environment" unique_id=2133327298]
+position = Vector2(45, 86.999985)
+scale = Vector2(12.233028, 1.8984729)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor2" unique_id=1980599499]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor2" unique_id=589245885]
+shape = SubResource("RectangleShape2D_jywgt")
+
+[node name="Floor6" type="StaticBody2D" parent="Environment" unique_id=920064609]
+position = Vector2(789.99994, 193)
+rotation = 3.1504247
+scale = Vector2(1.8394246, 0.29630616)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor6" unique_id=1347403573]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor6" unique_id=689995528]
+shape = SubResource("RectangleShape2D_4t8k6")
+
+[node name="Floor7" type="StaticBody2D" parent="Environment" unique_id=1348426277]
+position = Vector2(1077, 94)
+rotation = 3.1504247
+scale = Vector2(1.8394246, 0.29630616)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor7" unique_id=1251263754]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor7" unique_id=1678785164]
+shape = SubResource("RectangleShape2D_4t8k6")
+
+[node name="Floor8" type="StaticBody2D" parent="Environment" unique_id=853253974]
+position = Vector2(789.0001, -13)
+rotation = 3.1504247
+scale = Vector2(1.8394246, 0.29630616)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor8" unique_id=1379693167]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor8" unique_id=703940897]
+shape = SubResource("RectangleShape2D_4t8k6")
+
+[node name="Floor9" type="StaticBody2D" parent="Environment" unique_id=742908418]
+position = Vector2(976.9999, 371)
+rotation = 3.1504247
+scale = Vector2(3.7997007, 0.29630616)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor9" unique_id=1626469194]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor9" unique_id=263878269]
+shape = SubResource("RectangleShape2D_4t8k6")
+
+[node name="Floor10" type="StaticBody2D" parent="Environment" unique_id=1642202895]
+position = Vector2(831, 454.00003)
+rotation = 3.1504247
+scale = Vector2(6.118551, 0.29630616)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor10" unique_id=596721310]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor10" unique_id=1622647594]
+shape = SubResource("RectangleShape2D_4t8k6")
+
+[node name="Floor11" type="StaticBody2D" parent="Environment" unique_id=67581545]
+position = Vector2(-364, -158)
+scale = Vector2(6.113029, 2.5784736)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor11" unique_id=2009793491]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor11" unique_id=1080570838]
+shape = SubResource("RectangleShape2D_jywgt")
+
+[node name="Floor12" type="StaticBody2D" parent="Environment" unique_id=247841672]
+position = Vector2(93.99997, 39.000008)
+scale = Vector2(-4.976721, 1.7980917)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor12" unique_id=1876812797]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor12" unique_id=751432705]
+shape = SubResource("RectangleShape2D_jywgt")
+
+[node name="Floor13" type="StaticBody2D" parent="Environment" unique_id=375499101]
+position = Vector2(390.99997, -299)
+rotation = 3.1504247
+scale = Vector2(12.928177, 0.29630616)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor13" unique_id=1376961256]
+modulate = Color(0.2, 0.2, 0.2, 1)
+texture = ExtResource("1_wg3te")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor13" unique_id=1444182328]
+shape = SubResource("RectangleShape2D_4t8k6")
+
+[node name="Player" parent="." unique_id=186049346 instance=ExtResource("2_jywgt")]
+position = Vector2(-544, 500)
+
+[node name="GameManager" type="Node" parent="." unique_id=782604130 node_paths=PackedStringArray("player_node")]
+script = ExtResource("3_ku6r7")
+player_node = NodePath("../Player")
+spirit_trail_scene = ExtResource("4_hi6ks")
+
+[node name="Traps" type="Node2D" parent="." unique_id=236781544]
+position = Vector2(-221, -39)
+
+[node name="MeleeMonster" parent="Traps" unique_id=949551552 instance=ExtResource("5_6x5s0")]
+position = Vector2(-32, 508)
+scale = Vector2(0.76, 0.76)
+detection_radius = 200.0
+
+[node name="MeleeMonster2" parent="Traps" unique_id=1911609280 instance=ExtResource("5_6x5s0")]
+position = Vector2(100, 508)
+scale = Vector2(0.7199997, 0.7199997)
+detection_radius = 200.0
+
+[node name="MeleeMonster3" parent="Traps" unique_id=1626039645 instance=ExtResource("5_6x5s0")]
+position = Vector2(562, 516)
+
+[node name="StartMarker" type="Marker2D" parent="." unique_id=1178234203 groups=["start_marker"]]
+position = Vector2(-549, 500)
+
+[node name="Door2" parent="." unique_id=318478667 instance=ExtResource("6_6x5s0")]
+position = Vector2(129, -141)
+
+[node name="Turret" parent="." unique_id=1658400575 instance=ExtResource("6_uwnnm")]
+position = Vector2(1070, -220)
+rotation = 3.14159
+fire_rate = 3.0
