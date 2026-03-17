@@ -2,6 +2,7 @@ extends Node
 
 var _color_rect: ColorRect
 var _anim_player: AnimationPlayer
+var _music_player: AudioStreamPlayer
 var _next_scene_path: String = ""
 
 func _ready() -> void:
@@ -23,7 +24,7 @@ func _ready() -> void:
 	mat.set_shader_parameter("shape_tiling", 32.0)
 	mat.set_shader_parameter("shape_feathering", 0.1)
 	mat.set_shader_parameter("shape_treshold", 1.0)
-	mat.set_shader_parameter("node_resolution", Vector2(1152, 648))
+	mat.set_shader_parameter("node_resolution", get_viewport().get_visible_rect().size)
 
 	# Create a simple left-to-right gradient texture
 	var gradient = Gradient.new()
@@ -74,6 +75,22 @@ func _ready() -> void:
 	_anim_player.add_animation_library("", anim_lib)
 	_anim_player.root_node = _anim_player.get_path_to(_color_rect)
 	_anim_player.animation_finished.connect(_on_animation_finished)
+
+	get_viewport().size_changed.connect(_on_viewport_size_changed)
+
+	# Persistent background music
+	_music_player = AudioStreamPlayer.new()
+	_music_player.stream = load("res://kid loves air - metu (sadiler).wav")
+	_music_player.volume_db = -10.0
+	_music_player.bus = &"Master"
+	add_child(_music_player)
+	_music_player.finished.connect(_music_player.play)
+	_music_player.play()
+
+func _on_viewport_size_changed() -> void:
+	var mat = _color_rect.material as ShaderMaterial
+	if mat:
+		mat.set_shader_parameter("node_resolution", get_viewport().get_visible_rect().size)
 
 func go_to(path: String) -> void:
 	_next_scene_path = path

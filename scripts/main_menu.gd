@@ -1,8 +1,7 @@
 extends Control
 
-@onready var play_button: TextureButton = $Play
-@onready var credits_button: TextureButton = $Credits
-@onready var leave_button: TextureButton = $Leave
+@onready var play_button: TextureButton = $ButtonContainer/Play
+@onready var credits_button: TextureButton = $ButtonContainer/Credits
 
 var _time: float = 0.0
 

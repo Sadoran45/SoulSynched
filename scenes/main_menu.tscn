@@ -15,30 +15,44 @@ grow_vertical = 2
 script = ExtResource("1_main")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=203727357]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(1.0026743, 1.0026743)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_wu84c")
+expand_mode = 1
+stretch_mode = 6
 
-[node name="Play" type="TextureButton" parent="." unique_id=327793822]
-custom_minimum_size = Vector2(2.48, 0)
-layout_mode = 0
-offset_left = 738.0
-offset_top = 510.0
-offset_right = 1238.0
-offset_bottom = 686.0
-scale = Vector2(0.8834504, 0.8834504)
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -30.0
+offset_right = 221.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Play" type="TextureButton" parent="ButtonContainer" unique_id=327793822]
+layout_mode = 2
 texture_normal = ExtResource("3_8ln24")
+ignore_texture_size = true
+stretch_mode = 2
+custom_minimum_size = Vector2(442, 155)
 
-[node name="Credits" type="TextureButton" parent="." unique_id=2085577551]
-layout_mode = 0
-offset_left = 738.0
-offset_top = 727.0
-offset_right = 1248.0
-offset_bottom = 912.0
-scale = Vector2(0.88345045, 0.88345045)
+[node name="Credits" type="TextureButton" parent="ButtonContainer" unique_id=2085577551]
+layout_mode = 2
 texture_normal = ExtResource("4_rtw2f")
+ignore_texture_size = true
+stretch_mode = 2
+custom_minimum_size = Vector2(442, 155)
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="ButtonContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ButtonContainer/Credits" to="." method="_on_credits_pressed"]
